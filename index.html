@@ -22,18 +22,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
-  <header class="site-header" data-header>
-    <div class="container header__inner">
-      <a class="brand" href="/index.html">
-        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER">
-        <span class="brand-fallback">CERtoUSER</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Apri o chiudi il menu" data-menu-toggle>
-        <span class="menu-toggle__icon" aria-hidden="true"></span>
-        Menu
-      </button>
-      <nav class="nav" id="site-menu" aria-label="Navigazione principale">
+<body class="page-home">
+  <!-- CONTENT LOCKED: do not edit copy/text without explicit approval. -->
+  <div class="layout">
+    <aside class="sidebar" aria-label="Navigazione principale">
+      <div class="sidebar__brand">
+        <a href="/index.html" class="brand">
+          <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
+          <span class="brand-name">CERtoUSER</span>
+        </a>
+        <button class="sidebar__toggle" type="button" data-sidebar-toggle aria-controls="sidebarDrawer" aria-expanded="false" aria-label="Apri menu">
+          Menu
+        </button>
+      </div>
+      <nav class="sidebar__nav" aria-label="Menu">
         <a class="active" href="/index.html">Home</a>
         <a href="/chi-siamo.html">Chi siamo</a>
         <a href="/piattaforma.html">Piattaforma</a>
@@ -42,24 +44,145 @@
         <a href="/partner.html">Partner</a>
         <a href="/risorse.html">Risorse</a>
         <a href="/contatti.html">Contatti</a>
-        <a class="btn" href="https://suite.certouser.it">Accesso riservato</a>
       </nav>
-    </div>
-  </header>
-
-  <div class="mobile-backdrop" data-menu-backdrop></div>
-
-  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__top">
-      <div class="mobile-menu__brand">
-        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
-        <strong style="letter-spacing:0.06em;">CERtoUSER</strong>
+      <div class="sidebar__footer">
+        <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
+        <div class="powered">Powered by DA2</div>
       </div>
-      <button type="button" class="btn btn--ghost" data-menu-close aria-label="Chiudi menu">✕</button>
-    </div>
+    </aside>
 
-    <div class="mobile-menu__links">
-      <a href="/index.html">Home</a>
+    <main class="content" id="main">
+      <section class="hero hero--split" data-hero="/IMG/AdobeStock_1833857921.jpeg">
+        <div class="hero__media" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <p class="eyebrow">Piattaforma di regia</p>
+            <h1>Non realizziamo impianti. Governiamo sistemi.</h1>
+            <p class="lead">Decisioni, permessi e dati per Comunità Energetiche e investimenti responsabili. Tutto tracciato, difendibile e pronto per stakeholder e audit.</p>
+            <div class="grid cols-2" style="margin-top:12px;">
+              <div class="card">
+                <div class="accent" aria-hidden="true"></div>
+                <small>Per amministratori</small>
+                <h3>Condominio</h3>
+                <p>Governance condivisa, simulazioni e iter autorizzativi per CER/CEC condominiali.</p>
+                <a class="btn text" href="/condomini.html">Scopri</a>
+              </div>
+              <div class="card">
+                <div class="accent" aria-hidden="true"></div>
+                <small>Per enti</small>
+                <h3>Ente / Terzo Settore</h3>
+                <p>Compliance procedurale, rendicontazione e gestione stakeholder per soggetti pubblici e ETS.</p>
+                <a class="btn text" href="/enti-terzo-settore.html">Scopri</a>
+              </div>
+              <div class="card">
+                <div class="accent" aria-hidden="true"></div>
+                <small>Per imprese</small>
+                <h3>Azienda</h3>
+                <p>Autoconsumo, governance multilivello e dati pronti per investitori e audit.</p>
+                <a class="btn text" href="/imprese.html">Scopri</a>
+              </div>
+              <div class="card">
+                <div class="accent" aria-hidden="true"></div>
+                <small>Per filiere</small>
+                <h3>Partner</h3>
+                <p>Modelli di collaborazione, onboarding in piattaforma e standard di qualità condivisi.</p>
+                <a class="btn text" href="/partner.html">Scopri</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Pilastri: Governance, Metodo, Piattaforma</h2>
+          <p>Ogni iniziativa energetica necessita di un impianto decisionale chiaro, di processi replicabili e di strumenti che conservino tracce verificabili. CERtoUSER unisce questi tre elementi in un ambiente unico e difendibile.</p>
+          <div class="grid cols-3">
+            <div class="card">
+              <h3>Governance</h3>
+              <p>Ruoli definiti, regole di ingaggio e flussi autorizzativi tracciati in ogni fase.</p>
+            </div>
+            <div class="card">
+              <h3>Metodo</h3>
+              <p>“Prima si decide. Poi si investe.” Ogni decisione è documentata con assunzioni esplicite.</p>
+            </div>
+            <div class="card">
+              <h3>Piattaforma</h3>
+              <p>Data room, versioning delle evidenze e integrazioni leggere con sistemi esistenti.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid cols-2">
+            <div class="card">
+              <small>Bancabilità / readiness</small>
+              <h3>Documenti, permessi, verifiche</h3>
+              <p>Supporto alla bancabilità con data room strutturata, tracciabilità delle decisioni, raccolta permessi e output verificabili. Non è una garanzia di finanziamento, ma un processo ordinato di readiness.</p>
+            </div>
+            <div class="card">
+              <small>ESG</small>
+              <h3>Baseline e KPI misurabili</h3>
+              <p>Definizione di baseline, KPI misurabili e reporting per stakeholder. Evidenze e log rendono tracciabile ogni step, senza promettere certificazioni automatiche.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Metodo in 5 fasi</h2>
+          <p>Un percorso essenziale che permette di prendere decisioni consapevoli prima di impegnare risorse.</p>
+          <ol class="list">
+            <li><strong>Inquadramento</strong><span>Obiettivi, perimetro tecnico, vincoli normativi.</span></li>
+            <li><strong>Assunzioni e dati</strong><span>Raccolta dati, simulazioni e ipotesi dichiarate.</span></li>
+            <li><strong>Decisione</strong><span>Ruoli, deleghe, verbali e tracciabilità di chi approva cosa.</span></li>
+            <li><strong>Attuazione</strong><span>Documenti, permessi, iter con notifiche e audit trail.</span></li>
+            <li><strong>Monitoraggio</strong><span>KPI, baseline, scostamenti e report per stakeholder.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="card">
+            <h3>Parliamone</h3>
+            <p>Un confronto iniziale aiuta a capire se la piattaforma può sostenere il vostro modello operativo.</p>
+            <a class="btn" href="/contatti.html">Contatti</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div class="divider" aria-hidden="true"></div>
+          <div class="footer-brand">
+            <img class="brand-logo brand-logo--small" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" loading="lazy">
+            <div>
+              <div><strong>CERtoUSER</strong></div>
+              <div class="footer-powered">Powered by DA2</div>
+            </div>
+          </div>
+          <p>CERtoUSER · Piattaforma di regia per Comunità Energetiche e investimenti energetici responsabili.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="backdrop" data-sidebar-backdrop></div>
+
+  <aside class="drawer" id="sidebarDrawer" aria-hidden="true">
+    <div class="drawer__top">
+      <div class="drawer__brand">
+        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
+        <span class="brand-name">CERtoUSER</span>
+      </div>
+      <button class="btn btn--ghost" type="button" data-sidebar-close aria-label="Chiudi menu">✕</button>
+    </div>
+    <nav class="drawer__nav" aria-label="Menu mobile">
+      <a class="active" href="/index.html">Home</a>
       <a href="/chi-siamo.html">Chi siamo</a>
       <a href="/piattaforma.html">Piattaforma</a>
       <a href="/ambiti.html">Ambiti</a>
@@ -67,131 +190,11 @@
       <a href="/partner.html">Partner</a>
       <a href="/risorse.html">Risorse</a>
       <a href="/contatti.html">Contatti</a>
-    </div>
-
-    <div class="mobile-menu__cta">
+    </nav>
+    <div class="drawer__cta">
       <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
     </div>
-  </nav>
-
-  <main>
-    <section class="hero hero--split" data-hero="/IMG/AdobeStock_1833857921.jpeg">
-      <div class="hero__media" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="eyebrow">Piattaforma di regia</p>
-          <h1>Non realizziamo impianti. Governiamo sistemi.</h1>
-          <p class="lead">Decisioni, permessi e dati per Comunità Energetiche e investimenti responsabili. Tutto tracciato, difendibile e pronto per stakeholder e audit.</p>
-          <div class="grid cols-2" style="margin-top:12px;">
-            <div class="card">
-              <div class="accent" aria-hidden="true"></div>
-              <small>Per amministratori</small>
-              <h3>Condominio</h3>
-              <p>Governance condivisa, simulazioni e iter autorizzativi per CER/CEC condominiali.</p>
-              <a class="btn text" href="/condomini.html">Scopri</a>
-            </div>
-            <div class="card">
-              <div class="accent" aria-hidden="true"></div>
-              <small>Per enti</small>
-              <h3>Ente / Terzo Settore</h3>
-              <p>Compliance procedurale, rendicontazione e gestione stakeholder per soggetti pubblici e ETS.</p>
-              <a class="btn text" href="/enti-terzo-settore.html">Scopri</a>
-            </div>
-            <div class="card">
-              <div class="accent" aria-hidden="true"></div>
-              <small>Per imprese</small>
-              <h3>Azienda</h3>
-              <p>Autoconsumo, governance multilivello e dati pronti per investitori e audit.</p>
-              <a class="btn text" href="/imprese.html">Scopri</a>
-            </div>
-            <div class="card">
-              <div class="accent" aria-hidden="true"></div>
-              <small>Per filiere</small>
-              <h3>Partner</h3>
-              <p>Modelli di collaborazione, onboarding in piattaforma e standard di qualità condivisi.</p>
-              <a class="btn text" href="/partner.html">Scopri</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Pilastri: Governance, Metodo, Piattaforma</h2>
-        <p>Ogni iniziativa energetica necessita di un impianto decisionale chiaro, di processi replicabili e di strumenti che conservino tracce verificabili. CERtoUSER unisce questi tre elementi in un ambiente unico e difendibile.</p>
-        <div class="grid cols-3">
-          <div class="card">
-            <h3>Governance</h3>
-            <p>Ruoli definiti, regole di ingaggio e flussi autorizzativi tracciati in ogni fase.</p>
-          </div>
-          <div class="card">
-            <h3>Metodo</h3>
-            <p>“Prima si decide. Poi si investe.” Ogni decisione è documentata con assunzioni esplicite.</p>
-          </div>
-          <div class="card">
-            <h3>Piattaforma</h3>
-            <p>Data room, versioning delle evidenze e integrazioni leggere con sistemi esistenti.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="grid cols-2">
-          <div class="card">
-            <small>Bancabilità / readiness</small>
-            <h3>Documenti, permessi, verifiche</h3>
-            <p>Supporto alla bancabilità con data room strutturata, tracciabilità delle decisioni, raccolta permessi e output verificabili. Non è una garanzia di finanziamento, ma un processo ordinato di readiness.</p>
-          </div>
-          <div class="card">
-            <small>ESG</small>
-            <h3>Baseline e KPI misurabili</h3>
-            <p>Definizione di baseline, KPI misurabili e reporting per stakeholder. Evidenze e log rendono tracciabile ogni step, senza promettere certificazioni automatiche.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Metodo in 5 fasi</h2>
-        <p>Un percorso essenziale che permette di prendere decisioni consapevoli prima di impegnare risorse.</p>
-        <ol class="list">
-          <li><strong>Inquadramento</strong><span>Obiettivi, perimetro tecnico, vincoli normativi.</span></li>
-          <li><strong>Assunzioni e dati</strong><span>Raccolta dati, simulazioni e ipotesi dichiarate.</span></li>
-          <li><strong>Decisione</strong><span>Ruoli, deleghe, verbali e tracciabilità di chi approva cosa.</span></li>
-          <li><strong>Attuazione</strong><span>Documenti, permessi, iter con notifiche e audit trail.</span></li>
-          <li><strong>Monitoraggio</strong><span>KPI, baseline, scostamenti e report per stakeholder.</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="card">
-          <h3>Parliamone</h3>
-          <p>Un confronto iniziale aiuta a capire se la piattaforma può sostenere il vostro modello operativo.</p>
-          <a class="btn" href="/contatti.html">Contatti</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="divider" aria-hidden="true"></div>
-      <div class="footer-brand">
-        <img class="brand-logo brand-logo--small" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" loading="lazy">
-        <div>
-          <div><strong>CERtoUSER</strong></div>
-          <div class="footer-powered">Powered by DA2</div>
-        </div>
-      </div>
-      <p>CERtoUSER · Piattaforma di regia per Comunità Energetiche e investimenti energetici responsabili.</p>
-    </div>
-  </footer>
+  </aside>
 
   <script src="/assets/js/site.js"></script>
 </body>

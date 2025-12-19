@@ -1,53 +1,43 @@
-const header = document.querySelector('[data-header]');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileBackdrop = document.querySelector('[data-menu-backdrop]');
-const mobileToggle = document.querySelector('[data-menu-toggle]');
-const mobileClose = document.querySelector('[data-menu-close]');
-const firstMobileLink = mobileMenu ? mobileMenu.querySelector('a') : null;
+const sidebarToggle = document.querySelector('[data-sidebar-toggle]');
+const sidebarClose = document.querySelector('[data-sidebar-close]');
+const sidebarBackdrop = document.querySelector('[data-sidebar-backdrop]');
+const sidebarDrawer = document.getElementById('sidebarDrawer');
+const firstDrawerLink = sidebarDrawer ? sidebarDrawer.querySelector('a') : null;
 
-const setMobileMenuState = (open) => {
-  if (!mobileMenu || !mobileToggle || !mobileBackdrop) return;
-  mobileMenu.classList.toggle('is-open', open);
-  mobileBackdrop.classList.toggle('is-open', open);
-  document.body.classList.toggle('menu-open', open);
-  mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
-  if (open && firstMobileLink) {
-    firstMobileLink.focus();
+const setSidebarState = (open) => {
+  if (!sidebarDrawer || !sidebarToggle || !sidebarBackdrop) return;
+  document.body.classList.toggle('sidebar-open', open);
+  sidebarToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  sidebarDrawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (open && firstDrawerLink) {
+    firstDrawerLink.focus();
   }
 };
 
-if (mobileToggle && mobileMenu && mobileBackdrop) {
-  mobileToggle.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.contains('is-open');
-    setMobileMenuState(!isOpen);
+if (sidebarToggle && sidebarDrawer && sidebarBackdrop) {
+  sidebarToggle.addEventListener('click', () => {
+    const isOpen = document.body.classList.contains('sidebar-open');
+    setSidebarState(!isOpen);
   });
 }
 
-[mobileClose, mobileBackdrop].forEach((el) => {
-  el?.addEventListener('click', () => setMobileMenuState(false));
+[sidebarClose, sidebarBackdrop].forEach((el) => {
+  el?.addEventListener('click', () => setSidebarState(false));
 });
 
-if (mobileMenu) {
-  mobileMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setMobileMenuState(false));
+if (sidebarDrawer) {
+  sidebarDrawer.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setSidebarState(false));
   });
 }
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && mobileMenu?.classList.contains('is-open')) {
-    setMobileMenuState(false);
+  if (event.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+    setSidebarState(false);
   }
 });
 
-window.addEventListener('scroll', () => {
-  if (!header) return;
-  if (window.scrollY > 10) {
-    header.classList.add('shadow');
-  } else {
-    header.classList.remove('shadow');
-  }
-});
+setSidebarState(false);
 
 // Hero background
 const heroes = document.querySelectorAll('.hero[data-hero] .hero__media');
