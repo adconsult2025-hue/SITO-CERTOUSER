@@ -7,6 +7,7 @@
   --gold: #c8a45d;
   --red: #c65353;
   --border: rgba(255, 255, 255, 0.08);
+  --stroke: rgba(255, 255, 255, 0.12);
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   --radius: 12px;
   --spacing: 18px;
@@ -77,22 +78,33 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  min-height: 70px;
+  gap: 16px;
+  min-height: 72px;
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 600;
   letter-spacing: 0.4px;
   color: var(--text);
+  line-height: 1;
 }
 
-.brand img {
-  width: 32px;
-  height: 32px;
+.brand-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.brand-logo--small {
+  height: 28px;
+}
+
+.brand-fallback {
+  font-size: 16px;
+  letter-spacing: 0.6px;
 }
 
 .nav {
@@ -167,10 +179,40 @@ footer {
 }
 
 .hero {
+  position: relative;
   padding: 72px 0 36px;
-  border-bottom: 1px solid var(--border);
-  background: radial-gradient(circle at 20% 20%, rgba(95, 207, 128, 0.08), transparent 30%),
-    radial-gradient(circle at 80% 10%, rgba(200, 164, 93, 0.12), transparent 26%);
+  border-bottom: 1px solid var(--stroke);
+  background-color: #070707;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-layers, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero.hero-marked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/IMG/logo%20cer%20to%20user%20%282%29.png');
+  background-repeat: no-repeat;
+  background-position: 86% center;
+  background-size: 260px;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -230,6 +272,34 @@ footer {
   position: relative;
   overflow: hidden;
   transition: border-color var(--transition), transform var(--transition);
+}
+
+.card-media {
+  position: relative;
+  height: 150px;
+  margin: -20px -20px 16px;
+  border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 8px 8px;
+  overflow: hidden;
+  background-image: var(--card-media, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.82));
+  z-index: 1;
+}
+
+.card-media__title {
+  position: absolute;
+  inset: auto 16px 14px 16px;
+  z-index: 2;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .card:hover,
@@ -322,6 +392,23 @@ footer {
   color: var(--text);
 }
 
+.footer-inner {
+  display: grid;
+  gap: 14px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.footer-powered {
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .table-like {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -406,6 +493,14 @@ textarea {
   .header-inner {
     padding: 10px 0;
   }
+
+  .brand-logo {
+    height: 34px;
+  }
+
+  .hero.hero-marked::after {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -417,4 +512,20 @@ textarea {
     width: 100%;
     justify-content: center;
   }
+
+  .card-media {
+    height: 120px;
+    margin: -20px -20px 12px;
+  }
 }
+
+@media (max-width: 520px) {
+  .brand-logo {
+    height: 32px;
+  }
+
+  .hero.hero-marked::after {
+    display: none;
+  }
+}
+
