@@ -4,20 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CERtoUSER | Piattaforma di regia per Comunità Energetiche</title>
-  <meta name="description" content="CERtoUSER governa sistemi energetici con una piattaforma di regia per Comunità Energetiche, incentivi pubblici e rigenerazione energetica.">
+  <meta name="description" content="CERtoUSER governa sistemi energetici: piattaforma di regia per Comunità Energetiche, incentivi pubblici e investimenti sostenibili.">
+  <link rel="canonical" href="https://www.certouser.it/">
+  <meta property="og:title" content="CERtoUSER | Piattaforma di regia per Comunità Energetiche">
+  <meta property="og:description" content="Piattaforma di regia per comunità energetiche, governance verificabile e dati pronti per decisioni difendibili.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.certouser.it/">
+  <meta property="og:image" content="/IMG/AdobeStock_1833857921.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CERtoUSER | Piattaforma di regia per Comunità Energetiche">
+  <meta name="twitter:description" content="Governance, metodo e piattaforma per decisioni energetiche trasparenti.">
+  <meta name="twitter:image" content="/IMG/AdobeStock_1833857921.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrapper header-inner">
+  <header class="site-header" data-header>
+    <div class="container header__inner">
       <a class="brand" href="/index.html">
         <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER">
         <span class="brand-fallback">CERtoUSER</span>
       </a>
-      <nav class="nav" aria-label="Navigazione principale">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Apri o chiudi il menu" data-nav-toggle>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="nav" id="site-menu" data-nav aria-label="Navigazione principale">
         <a class="active" href="/index.html">Home</a>
         <a href="/chi-siamo.html">Chi siamo</a>
         <a href="/piattaforma.html">Piattaforma</a>
@@ -28,52 +44,53 @@
         <a href="/contatti.html">Contatti</a>
         <a class="btn" href="https://suite.certouser.it">Accesso riservato</a>
       </nav>
-      <button class="menu-toggle" aria-label="Apri o chiudi il menu">☰</button>
     </div>
   </header>
 
   <main>
-    <section class="hero hero-marked" style="--hero-layers: linear-gradient(rgba(5,5,5,0.78), rgba(5,5,5,0.88)), url('/IMG/AdobeStock_1833857921.jpeg');">
-      <div class="wrapper">
-        <div class="breadcrumb">Home</div>
-        <p class="tagline">Piattaforma di regia per Comunità Energetiche, incentivi pubblici e rigenerazione energetica.</p>
-        <h1>Non realizziamo impianti. Governiamo sistemi.</h1>
-        <p>CERtoUSER supporta banche, enti pubblici e organizzazioni nel coordinare decisioni, permessi e dati per progetti di energia condivisa e investimenti sostenibili. La piattaforma offre tracciabilità, metodi verificabili e una governance difendibile.</p>
-        <div class="grid cols-2" style="margin-top:18px;">
-          <div class="card">
-            <div class="accent" aria-hidden="true"></div>
-            <small>Per amministratori</small>
-            <h3>Condominio</h3>
-            <p>Governance condivisa, simulazioni e iter autorizzativi per CER/CEC condominiali.</p>
-            <a class="btn text" href="/condomini.html">Scopri</a>
-          </div>
-          <div class="card">
-            <div class="accent" aria-hidden="true"></div>
-            <small>Per enti</small>
-            <h3>Ente / Terzo Settore</h3>
-            <p>Compliance procedurale, rendicontazione e gestione stakeholder per soggetti pubblici e ETS.</p>
-            <a class="btn text" href="/enti-terzo-settore.html">Scopri</a>
-          </div>
-          <div class="card">
-            <div class="accent" aria-hidden="true"></div>
-            <small>Per imprese</small>
-            <h3>Azienda</h3>
-            <p>Autoconsumo, governance multilivello e dati pronti per investitori e audit.</p>
-            <a class="btn text" href="/imprese.html">Scopri</a>
-          </div>
-          <div class="card">
-            <div class="accent" aria-hidden="true"></div>
-            <small>Per filiere</small>
-            <h3>Partner</h3>
-            <p>Modelli di collaborazione, onboarding in piattaforma e standard di qualità condivisi.</p>
-            <a class="btn text" href="/partner.html">Scopri</a>
+    <section class="hero hero--split" data-hero="/IMG/AdobeStock_1833857921.jpeg">
+      <div class="hero__media" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Piattaforma di regia</p>
+          <h1>Non realizziamo impianti. Governiamo sistemi.</h1>
+          <p class="lead">Decisioni, permessi e dati per Comunità Energetiche e investimenti responsabili. Tutto tracciato, difendibile e pronto per stakeholder e audit.</p>
+          <div class="grid cols-2" style="margin-top:12px;">
+            <div class="card">
+              <div class="accent" aria-hidden="true"></div>
+              <small>Per amministratori</small>
+              <h3>Condominio</h3>
+              <p>Governance condivisa, simulazioni e iter autorizzativi per CER/CEC condominiali.</p>
+              <a class="btn text" href="/condomini.html">Scopri</a>
+            </div>
+            <div class="card">
+              <div class="accent" aria-hidden="true"></div>
+              <small>Per enti</small>
+              <h3>Ente / Terzo Settore</h3>
+              <p>Compliance procedurale, rendicontazione e gestione stakeholder per soggetti pubblici e ETS.</p>
+              <a class="btn text" href="/enti-terzo-settore.html">Scopri</a>
+            </div>
+            <div class="card">
+              <div class="accent" aria-hidden="true"></div>
+              <small>Per imprese</small>
+              <h3>Azienda</h3>
+              <p>Autoconsumo, governance multilivello e dati pronti per investitori e audit.</p>
+              <a class="btn text" href="/imprese.html">Scopri</a>
+            </div>
+            <div class="card">
+              <div class="accent" aria-hidden="true"></div>
+              <small>Per filiere</small>
+              <h3>Partner</h3>
+              <p>Modelli di collaborazione, onboarding in piattaforma e standard di qualità condivisi.</p>
+              <a class="btn text" href="/partner.html">Scopri</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrapper">
+      <div class="container">
         <h2>Pilastri: Governance, Metodo, Piattaforma</h2>
         <p>Ogni iniziativa energetica necessita di un impianto decisionale chiaro, di processi replicabili e di strumenti che conservino tracce verificabili. CERtoUSER unisce questi tre elementi in un ambiente unico e difendibile.</p>
         <div class="grid cols-3">
@@ -94,7 +111,7 @@
     </section>
 
     <section class="section">
-      <div class="wrapper">
+      <div class="container">
         <div class="grid cols-2">
           <div class="card">
             <small>Bancabilità / readiness</small>
@@ -111,7 +128,7 @@
     </section>
 
     <section class="section">
-      <div class="wrapper">
+      <div class="container">
         <h2>Metodo in 5 fasi</h2>
         <p>Un percorso essenziale che permette di prendere decisioni consapevoli prima di impegnare risorse.</p>
         <ol class="list">
@@ -125,7 +142,7 @@
     </section>
 
     <section class="section">
-      <div class="wrapper">
+      <div class="container">
         <div class="card">
           <h3>Parliamone</h3>
           <p>Un confronto iniziale aiuta a capire se la piattaforma può sostenere il vostro modello operativo.</p>
@@ -136,7 +153,7 @@
   </main>
 
   <footer class="footer">
-    <div class="wrapper footer-inner">
+    <div class="container footer-inner">
       <div class="divider" aria-hidden="true"></div>
       <div class="footer-brand">
         <img class="brand-logo brand-logo--small" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" loading="lazy">
