@@ -193,6 +193,91 @@ main {
   border-bottom: 1px solid var(--green);
 }
 
+/* --- Mobile menu overlay (fix sovrapposizione) --- */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 9998;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #070707;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 28px;
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 2px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.mobile-menu__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+
+.mobile-menu__links {
+  padding: 18px 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu__links a {
+  display: block;
+  padding: 14px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.mobile-menu__links a:active,
+.mobile-menu__links a:focus {
+  outline: none;
+  border-color: rgba(24, 208, 123, 0.60);
+}
+
+.mobile-menu__cta {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.mobile-menu.is-open,
+.mobile-backdrop.is-open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (min-width: 920px) {
+  .mobile-menu,
+  .mobile-backdrop {
+    display: none !important;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -571,24 +656,7 @@ textarea {
 
 @media (max-width: 900px) {
   .nav {
-    position: fixed;
-    inset: 0 0 0 30%;
-    background: rgba(5, 5, 5, 0.98);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 100px clamp(18px, 4vw, 22px);
-    transform: translateX(100%);
-    transition: transform var(--transition);
-  }
-
-  .nav.is-open {
-    transform: translateX(0);
-  }
-
-  .nav a {
-    width: 100%;
-    padding: 12px 8px;
-    font-size: 17px;
+    display: none;
   }
 
   .header__inner {
