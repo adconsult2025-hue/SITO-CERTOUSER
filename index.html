@@ -1,256 +1,147 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CERtoUSER – Piattaforma di regia per Comunità Energetiche</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CERtoUSER | Piattaforma di regia per Comunità Energetiche</title>
+  <meta name="description" content="CERtoUSER governa sistemi energetici con una piattaforma di regia per Comunità Energetiche, incentivi pubblici e rigenerazione energetica.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-content">
-      <a href="#top" class="brand" aria-label="CERtoUSER">
-        <span class="logo-mark" aria-hidden="true">
-          <span class="logo-text">CER</span>
-          <span class="logo-separator" aria-hidden="true"></span>
-          <span class="logo-text accent">USER</span>
-        </span>
-        <span class="brand-tagline">Piattaforma di regia energetica</span>
+    <div class="wrapper header-inner">
+      <a class="brand" href="/index.html">
+        <img src="/assets/img/logo.png" alt="CERtoUSER logo" onerror="this.style.display='none'">
+        <span class="brand-fallback">CERtoUSER</span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-      <nav id="primary-nav" class="nav">
-        <ul>
-          <li><a href="#mandato">Mandato</a></li>
-          <li><a href="#suite">Suite</a></li>
-          <li><a href="#metodo">Metodo</a></li>
-          <li><a href="#conformita">Conformità</a></li>
-          <li><a href="#contatti">Contatti</a></li>
-        </ul>
+      <nav class="nav" aria-label="Navigazione principale">
+        <a class="active" href="/index.html">Home</a>
+        <a href="/chi-siamo.html">Chi siamo</a>
+        <a href="/piattaforma.html">Piattaforma</a>
+        <a href="/ambiti.html">Ambiti</a>
+        <a href="/metodo.html">Metodo</a>
+        <a href="/partner.html">Partner</a>
+        <a href="/risorse.html">Risorse</a>
+        <a href="/contatti.html">Contatti</a>
+        <a class="btn" href="https://suite.certouser.it">Accesso riservato</a>
       </nav>
+      <button class="menu-toggle" aria-label="Apri o chiudi il menu">☰</button>
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">Regia istituzionale per Comunità Energetiche</p>
-          <h1>Governance, incentivi e controllo operativo in un’unica piattaforma</h1>
-          <p class="lead">CERtoUSER coordina decisioni, responsabilità e compliance energetica per enti pubblici, banche e organizzazioni che richiedono processi verificabili e continuità di governo.</p>
-          <div class="hero-actions">
-            <a class="link-quiet" href="#suite">Esplora la suite</a>
-            <span class="separator" aria-hidden="true"></span>
-            <a class="link-primary" href="#contatti">Attiva un confronto riservato</a>
+      <div class="wrapper">
+        <div class="breadcrumb">Home</div>
+        <p class="tagline">Piattaforma di regia per Comunità Energetiche, incentivi pubblici e rigenerazione energetica.</p>
+        <h1>Non realizziamo impianti. Governiamo sistemi.</h1>
+        <p>CERtoUSER supporta banche, enti pubblici e organizzazioni nel coordinare decisioni, permessi e dati per progetti di energia condivisa e investimenti sostenibili. La piattaforma offre tracciabilità, metodi verificabili e una governance difendibile.</p>
+        <div class="grid cols-2" style="margin-top:18px;">
+          <div class="card">
+            <div class="accent" aria-hidden="true"></div>
+            <small>Per amministratori</small>
+            <h3>Condominio</h3>
+            <p>Governance condivisa, simulazioni e iter autorizzativi per CER/CEC condominiali.</p>
+            <a class="btn text" href="/condomini.html">Scopri</a>
           </div>
-        </div>
-        <div class="hero-panel">
-          <div class="panel-block">
-            <h3>Direzione integrata</h3>
-            <p>Quadro unico per incentivi, flussi autorizzativi e monitoraggio degli impatti energetici.</p>
+          <div class="card">
+            <div class="accent" aria-hidden="true"></div>
+            <small>Per enti</small>
+            <h3>Ente / Terzo Settore</h3>
+            <p>Compliance procedurale, rendicontazione e gestione stakeholder per soggetti pubblici e ETS.</p>
+            <a class="btn text" href="/enti-terzo-settore.html">Scopri</a>
           </div>
-          <div class="panel-block">
-            <h3>Tracciabilità documentale</h3>
-            <p>Archivio auditabile di delibere, procurement e rendicontazioni, con versioning controllato.</p>
+          <div class="card">
+            <div class="accent" aria-hidden="true"></div>
+            <small>Per imprese</small>
+            <h3>Azienda</h3>
+            <p>Autoconsumo, governance multilivello e dati pronti per investitori e audit.</p>
+            <a class="btn text" href="/imprese.html">Scopri</a>
           </div>
-          <div class="panel-block">
-            <h3>Supervisione continua</h3>
-            <p>Allarmi mirati su scostamenti, scadenze e obblighi di legge, con escalation semantica.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="mandato" class="section">
-      <div class="container section-header">
-        <div>
-          <p class="eyebrow">Mandato di governo</p>
-          <h2>Struttura di controllo per decisioni misurate</h2>
-          <p class="section-lead">La piattaforma valorizza i processi esistenti, creando una regia condivisa tra funzioni tecniche, amministrative e direzionali. Ogni passaggio è visibile, verificabile, firmabile.</p>
-        </div>
-        <div class="divider"></div>
-      </div>
-      <div class="container cards-grid">
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="presentation"><path d="M6 6h12v4H6zm0 8h12v4H6z"/></svg>
-          </div>
-          <h3>Programmazione</h3>
-          <p>Pianificazione multilivello di iniziative CER con priorità, budget e ownership espliciti.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="presentation"><path d="M5 5h14v14H5z"/><path d="M9 9h6v6H9z"/></svg>
-          </div>
-          <h3>Procurement</h3>
-          <p>Governance trasparente di gare e affidamenti, con traccia delle evidenze e dei criteri.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="presentation"><path d="M4 12h16M12 4v16"/></svg>
-          </div>
-          <h3>Decisioni collegiali</h3>
-          <p>Workflow di approvazione coerente con ruoli e procure, notifiche mirate e registro deliberazioni.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="presentation"><path d="M12 3l7 4v10l-7 4-7-4V7z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <h3>Misurazione</h3>
-          <p>Indicatori di aderenza agli obiettivi climatici e amministrativi, con audit trail consultabile.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="suite" class="section alt">
-      <div class="container section-header">
-        <div>
-          <p class="eyebrow">Suite istituzionale</p>
-          <h2>Moduli coordinati, un unico perimetro di controllo</h2>
-          <p class="section-lead">Ogni modulo è integrato: la direzione può attivare o disattivare componenti in base al perimetro dell’organizzazione, mantenendo un’unica base dati verificabile.</p>
-        </div>
-        <div class="divider gold"></div>
-      </div>
-      <div class="container list-grid">
-        <div class="list-block">
-          <h3>Regia strategica</h3>
-          <ul>
-            <li>Cruscotti sintetici per CDA e direzioni generali</li>
-            <li>Mappatura dei flussi di incentivo e delle responsabilità</li>
-            <li>Linee guida operative con stati di avanzamento</li>
-          </ul>
-        </div>
-        <div class="list-block">
-          <h3>Operatività controllata</h3>
-          <ul>
-            <li>Checklist procedurali per Community Energy</li>
-            <li>Gestione atti, protocolli e allegati con versioni</li>
-            <li>Monitoraggio scadenze e obblighi di rendicontazione</li>
-          </ul>
-        </div>
-        <div class="list-block">
-          <h3>Affidabilità e sicurezza</h3>
-          <ul>
-            <li>Audit log completo per ogni azione e modifica</li>
-            <li>Autenticazione forte e profilazione per ruolo</li>
-            <li>Backup verificabili e continuità di servizio</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="metodo" class="section">
-      <div class="container section-header">
-        <div>
-          <p class="eyebrow">Metodo</p>
-          <h2>Approccio sequenziale, governiamo complessità</h2>
-          <p class="section-lead">Percorso guidato, con passaggi documentati e stati chiari. Ogni fase è supportata da assistenza metodologica e da controlli automatici di coerenza.</p>
-        </div>
-        <div class="divider"></div>
-      </div>
-      <div class="container steps">
-        <div class="step">
-          <span class="step-index">1</span>
-          <div>
-            <h3>Allineamento iniziale</h3>
-            <p>Raccolta del perimetro decisionale, integrazione con sistemi esistenti, definizione degli attori.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-index">2</span>
-          <div>
-            <h3>Regole di ingaggio</h3>
-            <p>Configurazione di workflow, responsabilità e criteri di priorità per progetti e incentivi.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-index">3</span>
-          <div>
-            <h3>Monitoraggio continuo</h3>
-            <p>Controlli automatici su scostamenti, adempimenti, livelli di servizio e documenti.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-index">4</span>
-          <div>
-            <h3>Reporting istituzionale</h3>
-            <p>Report sintetici e dossier di evidenze per audit, CDA e interlocutori finanziari.</p>
+          <div class="card">
+            <div class="accent" aria-hidden="true"></div>
+            <small>Per filiere</small>
+            <h3>Partner</h3>
+            <p>Modelli di collaborazione, onboarding in piattaforma e standard di qualità condivisi.</p>
+            <a class="btn text" href="/partner.html">Scopri</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="conformita" class="section alt">
-      <div class="container section-header">
-        <div>
-          <p class="eyebrow">Conformità e affidabilità</p>
-          <h2>Presidio normativo e controllo del rischio</h2>
-          <p class="section-lead">Supportiamo la conformità con tracciabilità continua, notifiche su scadenze critiche e matrice di rischio consultabile.</p>
-        </div>
-        <div class="divider gold"></div>
-      </div>
-      <div class="container highlights">
-        <div class="highlight">
-          <span class="dot" aria-hidden="true"></span>
-          <div>
-            <h3>Compliance by design</h3>
-            <p>Modelli procedurali coerenti con linee guida nazionali e obblighi europei, aggiornabili senza interruzioni.</p>
+    <section class="section">
+      <div class="wrapper">
+        <h2>Pilastri: Governance, Metodo, Piattaforma</h2>
+        <p>Ogni iniziativa energetica necessita di un impianto decisionale chiaro, di processi replicabili e di strumenti che conservino tracce verificabili. CERtoUSER unisce questi tre elementi in un ambiente unico e difendibile.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Governance</h3>
+            <p>Ruoli definiti, regole di ingaggio e flussi autorizzativi tracciati in ogni fase.</p>
           </div>
-        </div>
-        <div class="highlight">
-          <span class="dot red" aria-hidden="true"></span>
-          <div>
-            <h3>Segnali di rischio</h3>
-            <p>Alert selettivi su scostamenti di KPI energetici, ritardi documentali e variazioni autorizzative.</p>
+          <div class="card">
+            <h3>Metodo</h3>
+            <p>“Prima si decide. Poi si investe.” Ogni decisione è documentata con assunzioni esplicite.</p>
           </div>
-        </div>
-        <div class="highlight">
-          <span class="dot" aria-hidden="true"></span>
-          <div>
-            <h3>Interoperabilità</h3>
-            <p>API e connettori istituzionali per integrare anagrafiche, protocolli, sistemi finanziari.</p>
+          <div class="card">
+            <h3>Piattaforma</h3>
+            <p>Data room, versioning delle evidenze e integrazioni leggere con sistemi esistenti.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contatti" class="section">
-      <div class="container contact">
-        <div>
-          <p class="eyebrow">Contatti istituzionali</p>
-          <h2>Un tavolo di lavoro riservato</h2>
-          <p class="section-lead">Per avviare una valutazione condivisa con direzioni generali, board e partner finanziari.</p>
-          <div class="contact-meta">
-            <p><span class="label">Canale riservato:</span> contatti@certouser.it</p>
-            <p><span class="label">Presidio operativo:</span> Roma · Milano · Bruxelles</p>
+    <section class="section">
+      <div class="wrapper">
+        <div class="grid cols-2">
+          <div class="card">
+            <small>Bancabilità / readiness</small>
+            <h3>Documenti, permessi, verifiche</h3>
+            <p>Supporto alla bancabilità con data room strutturata, tracciabilità delle decisioni, raccolta permessi e output verificabili. Non è una garanzia di finanziamento, ma un processo ordinato di readiness.</p>
+          </div>
+          <div class="card">
+            <small>ESG</small>
+            <h3>Baseline e KPI misurabili</h3>
+            <p>Definizione di baseline, KPI misurabili e reporting per stakeholder. Evidenze e log rendono tracciabile ogni step, senza promettere certificazioni automatiche.</p>
           </div>
         </div>
-        <div class="contact-panel">
-          <div class="panel-heading">Linee di sicurezza</div>
-          <ul>
-            <li>Accessi profilati e audit log continuo</li>
-            <li>Hosting europeo e cifratura end-to-end</li>
-            <li>Procedure di business continuity testate</li>
-          </ul>
-          <a class="link-primary" href="mailto:contatti@certouser.it">Apri il canale</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrapper">
+        <h2>Metodo in 5 fasi</h2>
+        <p>Un percorso essenziale che permette di prendere decisioni consapevoli prima di impegnare risorse.</p>
+        <ol class="list">
+          <li><strong>Inquadramento</strong><span>Obiettivi, perimetro tecnico, vincoli normativi.</span></li>
+          <li><strong>Assunzioni e dati</strong><span>Raccolta dati, simulazioni e ipotesi dichiarate.</span></li>
+          <li><strong>Decisione</strong><span>Ruoli, deleghe, verbali e tracciabilità di chi approva cosa.</span></li>
+          <li><strong>Attuazione</strong><span>Documenti, permessi, iter con notifiche e audit trail.</span></li>
+          <li><strong>Monitoraggio</strong><span>KPI, baseline, scostamenti e report per stakeholder.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrapper">
+        <div class="card">
+          <h3>Parliamone</h3>
+          <p>Un confronto iniziale aiuta a capire se la piattaforma può sostenere il vostro modello operativo.</p>
+          <a class="btn" href="/contatti.html">Contatti</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-brand">CERtoUSER · Regia per Comunità Energetiche</div>
-      <div class="footer-links">
-        <a href="#mandato">Mandato</a>
-        <a href="#conformita">Conformità</a>
-        <a href="#contatti">Contatti</a>
-      </div>
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="divider"></div>
+      <p>CERtoUSER · Piattaforma di regia per Comunità Energetiche e investimenti energetici responsabili.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>
