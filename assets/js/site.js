@@ -1,34 +1,42 @@
-const nav = document.querySelector('[data-nav]');
-const toggle = document.querySelector('[data-nav-toggle]');
 const header = document.querySelector('[data-header]');
-const firstNavLink = nav ? nav.querySelector('a') : null;
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileBackdrop = document.querySelector('[data-menu-backdrop]');
+const mobileToggle = document.querySelector('[data-menu-toggle]');
+const mobileClose = document.querySelector('[data-menu-close]');
+const firstMobileLink = mobileMenu ? mobileMenu.querySelector('a') : null;
 
-const setMenuState = (open) => {
-  if (!nav || !toggle) return;
-  nav.classList.toggle('is-open', open);
-  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+const setMobileMenuState = (open) => {
+  if (!mobileMenu || !mobileToggle || !mobileBackdrop) return;
+  mobileMenu.classList.toggle('is-open', open);
+  mobileBackdrop.classList.toggle('is-open', open);
   document.body.classList.toggle('menu-open', open);
-  if (open && firstNavLink) {
-    firstNavLink.focus();
+  mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (open && firstMobileLink) {
+    firstMobileLink.focus();
   }
 };
 
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.contains('is-open');
-    setMenuState(!isOpen);
+if (mobileToggle && mobileMenu && mobileBackdrop) {
+  mobileToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('is-open');
+    setMobileMenuState(!isOpen);
   });
 }
 
-if (nav) {
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setMenuState(false));
+[mobileClose, mobileBackdrop].forEach((el) => {
+  el?.addEventListener('click', () => setMobileMenuState(false));
+});
+
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMobileMenuState(false));
   });
 }
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
-    setMenuState(false);
+  if (event.key === 'Escape' && mobileMenu?.classList.contains('is-open')) {
+    setMobileMenuState(false);
   }
 });
 

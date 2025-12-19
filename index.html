@@ -29,11 +29,11 @@
         <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER">
         <span class="brand-fallback">CERtoUSER</span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Apri o chiudi il menu" data-nav-toggle>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Apri o chiudi il menu" data-menu-toggle>
         <span class="menu-toggle__icon" aria-hidden="true"></span>
         Menu
       </button>
-      <nav class="nav" id="site-menu" data-nav aria-label="Navigazione principale">
+      <nav class="nav" id="site-menu" aria-label="Navigazione principale">
         <a class="active" href="/index.html">Home</a>
         <a href="/chi-siamo.html">Chi siamo</a>
         <a href="/piattaforma.html">Piattaforma</a>
@@ -46,6 +46,33 @@
       </nav>
     </div>
   </header>
+
+  <div class="mobile-backdrop" data-menu-backdrop></div>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__top">
+      <div class="mobile-menu__brand">
+        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
+        <strong style="letter-spacing:0.06em;">CERtoUSER</strong>
+      </div>
+      <button type="button" class="btn btn--ghost" data-menu-close aria-label="Chiudi menu">✕</button>
+    </div>
+
+    <div class="mobile-menu__links">
+      <a href="/index.html">Home</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/piattaforma.html">Piattaforma</a>
+      <a href="/ambiti.html">Ambiti</a>
+      <a href="/metodo.html">Metodo</a>
+      <a href="/partner.html">Partner</a>
+      <a href="/risorse.html">Risorse</a>
+      <a href="/contatti.html">Contatti</a>
+    </div>
+
+    <div class="mobile-menu__cta">
+      <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
+    </div>
+  </nav>
 
   <main>
     <section class="hero hero--split" data-hero="/IMG/AdobeStock_1833857921.jpeg">
