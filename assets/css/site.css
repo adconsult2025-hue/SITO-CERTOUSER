@@ -217,7 +217,7 @@ footer {
   color: var(--muted);
 }
 
-.hero {
+.hero { 
   position: relative;
   overflow: hidden;
   background: #060606;
@@ -229,6 +229,19 @@ footer {
 
 .hero--split {
   padding: 0 0 18px;
+}
+
+.hero--text-only {
+  grid-template-columns: 1fr;
+}
+
+.media-center {
+  background-position: center center !important;
+}
+
+.media-center img {
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero__media {
@@ -356,6 +369,27 @@ p {
 .card__body {
   position: relative;
   z-index: 2;
+}
+
+.page-ambiti .content > * {
+  max-width: 1180px;
+}
+
+.page-ambiti .hero__media {
+  display: none;
+}
+
+.page-ambiti .hero.hero--split {
+  grid-template-columns: 1fr;
+}
+
+.page-ambiti .hero__content,
+.page-ambiti .hero__content .lead {
+  max-width: 88ch;
+}
+
+.page-ambiti .grid.cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .card:hover,
