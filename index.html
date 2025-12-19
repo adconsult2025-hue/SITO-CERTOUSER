@@ -1,517 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CERtoUSER | Piattaforma di regia per Comunità Energetiche</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CERtoUSER – Piattaforma di regia per Comunità Energetiche</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0f1714;
-      --panel: #18231f;
-      --text: #e8ede8;
-      --muted: #b4c1ba;
-      --accent: #1f7a4c;
-      --accent-2: #d2a85c;
-      --border: #2a3a33;
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(15, 23, 20, 0.9);
-      border-bottom: 1px solid var(--border);
-      z-index: 999;
-    }
-    .container {
-      width: min(1200px, 92vw);
-      margin: 0 auto;
-      padding: 0 0;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), #0e5a38);
-      display: grid;
-      place-items: center;
-      color: #e6f5ec;
-      font-weight: 700;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-    nav a {
-      font-weight: 500;
-      color: var(--text);
-      transition: color 0.2s ease;
-    }
-    nav a:focus-visible, nav a:hover { color: var(--accent-2); }
-    .cta-secondary {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(32, 48, 43, 0.7);
-      color: var(--text);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .cta-secondary:hover, .cta-secondary:focus-visible {
-      border-color: var(--accent-2);
-      color: var(--accent-2);
-      outline: none;
-    }
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 8px;
-      padding: 8px 10px;
-    }
-    main { padding-top: 92px; }
-    .hero {
-      padding: 100px 0 70px;
-      background: radial-gradient(circle at 20% 20%, rgba(31, 122, 76, 0.18), transparent 45%),
-                  radial-gradient(circle at 80% 10%, rgba(210, 168, 92, 0.12), transparent 42%),
-                  var(--bg);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 42px;
-      align-items: center;
-    }
-    h1 {
-      font-size: clamp(32px, 4vw, 44px);
-      margin: 0 0 16px;
-      line-height: 1.2;
-    }
-    h2 { margin: 0 0 12px; font-size: 26px; }
-    h3 { margin: 0 0 8px; font-size: 20px; }
-    .subtitle {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-    .claim {
-      font-weight: 600;
-      color: var(--accent-2);
-      margin-bottom: 24px;
-    }
-    .pill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-    .pill {
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(31, 122, 76, 0.12);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-weight: 600;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .pill:hover, .pill:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      outline: none;
-    }
-    section { padding: 72px 0; }
-    .section-header { margin-bottom: 32px; max-width: 760px; }
-    .muted { color: var(--muted); }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .card:hover, .card:focus-within { transform: translateY(-2px); border-color: var(--accent); }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(210, 168, 92, 0.12);
-      color: var(--accent-2);
-      font-weight: 600;
-      font-size: 13px;
-    }
-    .list-clean { padding: 0; margin: 12px 0 0; list-style: none; }
-    .list-clean li { margin-bottom: 8px; color: var(--muted); }
-    .ambiti { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .ambito {
-      border: 1px solid var(--border);
-      background: var(--panel);
-      padding: 18px;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-    .ambito a { color: var(--accent-2); font-weight: 600; }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-    }
-    .step {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--panel);
-      padding: 18px;
-      position: relative;
-      box-shadow: var(--shadow);
-    }
-    .step-number {
-      position: absolute;
-      top: -12px; left: 16px;
-      width: 28px; height: 28px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #e6f5ec;
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      box-shadow: 0 10px 26px rgba(31, 122, 76, 0.4);
-    }
-    footer {
-      border-top: 1px solid var(--border);
-      background: #0b120f;
-      padding: 32px 0 44px;
-      color: var(--muted);
-    }
-    .footer-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: center; }
-    .micro { font-size: 13px; color: var(--muted); }
-    .flow { display: grid; gap: 12px; }
-    .anchor-link { border-bottom: 1px dotted var(--border); }
-    .platform-note { margin-top: 16px; font-size: 13px; color: var(--muted); }
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      nav ul { position: absolute; inset: 100% 0 auto 0; background: rgba(15,23,20,0.96); flex-direction: column; padding: 16px; border-bottom: 1px solid var(--border); display: none; }
-      nav ul.open { display: flex; }
-      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
-      .nav { padding: 14px 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; animation: none !important; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container nav" aria-label="Navigazione principale">
-      <a class="logo" href="#top">
-        <span class="logo-mark" aria-hidden="true">CE</span>
-        <span>CERtoUSER</span>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#top" class="brand" aria-label="CERtoUSER">
+        <span class="logo-mark" aria-hidden="true">
+          <span class="logo-text">CER</span>
+          <span class="logo-separator" aria-hidden="true"></span>
+          <span class="logo-text accent">USER</span>
+        </span>
+        <span class="brand-tagline">Piattaforma di regia energetica</span>
       </a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
-      <nav>
-        <ul id="menu">
-          <li><a href="#identita">Chi siamo</a></li>
-          <li><a href="#piattaforma">Piattaforma</a></li>
-          <li><a href="#ambiti">Ambiti</a></li>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a href="#mandato">Mandato</a></li>
+          <li><a href="#suite">Suite</a></li>
           <li><a href="#metodo">Metodo</a></li>
+          <li><a href="#conformita">Conformità</a></li>
           <li><a href="#contatti">Contatti</a></li>
-          <li><a class="cta-secondary" href="#accesso">Accesso riservato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero" id="intro">
+    <section class="hero">
       <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Regia istituzionale per Comunità Energetiche</p>
+          <h1>Governance, incentivi e controllo operativo in un’unica piattaforma</h1>
+          <p class="lead">CERtoUSER coordina decisioni, responsabilità e compliance energetica per enti pubblici, banche e organizzazioni che richiedono processi verificabili e continuità di governo.</p>
+          <div class="hero-actions">
+            <a class="link-quiet" href="#suite">Esplora la suite</a>
+            <span class="separator" aria-hidden="true"></span>
+            <a class="link-primary" href="#contatti">Attiva un confronto riservato</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-block">
+            <h3>Direzione integrata</h3>
+            <p>Quadro unico per incentivi, flussi autorizzativi e monitoraggio degli impatti energetici.</p>
+          </div>
+          <div class="panel-block">
+            <h3>Tracciabilità documentale</h3>
+            <p>Archivio auditabile di delibere, procurement e rendicontazioni, con versioning controllato.</p>
+          </div>
+          <div class="panel-block">
+            <h3>Supervisione continua</h3>
+            <p>Allarmi mirati su scostamenti, scadenze e obblighi di legge, con escalation semantica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mandato" class="section">
+      <div class="container section-header">
         <div>
-          <h1>CERtoUSER<br>Piattaforma di regia per Comunità Energetiche,<br>incentivi pubblici e rigenerazione energetica</h1>
-          <p class="subtitle">Governance tecnica, normativa ed economica<br>per decisioni tracciabili e sostenibili</p>
-          <p class="claim">“Non realizziamo impianti. Governiamo sistemi.”</p>
-          <div class="pill-grid" aria-label="Seleziona il tuo profilo">
-            <a class="pill" href="#ambiti">Condominio</a>
-            <a class="pill" href="#ambiti">Ente / Terzo Settore</a>
-            <a class="pill" href="#ambiti">Azienda</a>
-            <a class="pill" href="#ambiti">Partner</a>
-          </div>
+          <p class="eyebrow">Mandato di governo</p>
+          <h2>Struttura di controllo per decisioni misurate</h2>
+          <p class="section-lead">La piattaforma valorizza i processi esistenti, creando una regia condivisa tra funzioni tecniche, amministrative e direzionali. Ogni passaggio è visibile, verificabile, firmabile.</p>
         </div>
+        <div class="divider"></div>
+      </div>
+      <div class="container cards-grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation"><path d="M6 6h12v4H6zm0 8h12v4H6z"/></svg>
+          </div>
+          <h3>Programmazione</h3>
+          <p>Pianificazione multilivello di iniziative CER con priorità, budget e ownership espliciti.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation"><path d="M5 5h14v14H5z"/><path d="M9 9h6v6H9z"/></svg>
+          </div>
+          <h3>Procurement</h3>
+          <p>Governance trasparente di gare e affidamenti, con traccia delle evidenze e dei criteri.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation"><path d="M4 12h16M12 4v16"/></svg>
+          </div>
+          <h3>Decisioni collegiali</h3>
+          <p>Workflow di approvazione coerente con ruoli e procure, notifiche mirate e registro deliberazioni.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation"><path d="M12 3l7 4v10l-7 4-7-4V7z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Misurazione</h3>
+          <p>Indicatori di aderenza agli obiettivi climatici e amministrativi, con audit trail consultabile.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="suite" class="section alt">
+      <div class="container section-header">
         <div>
-          <div class="card" style="min-height: 100%;">
-            <div class="badge">Piattaforma di governance</div>
-            <h3 style="margin-top: 14px;">Regia istituzionale, non fornitura</h3>
-            <p class="muted">Processi, dati e responsabilità per decisioni trasparenti, con tracciabilità tecnica ed economica.</p>
-            <ul class="list-clean">
-              <li>Supporto a comunità energetiche, piani di rigenerazione e valorizzazione patrimoniale.</li>
-              <li>Strumenti per CDA, enti pubblici e partner industriali.</li>
-              <li>Focus su coerenza normativa, bancabilità e KPI ESG.</li>
-            </ul>
+          <p class="eyebrow">Suite istituzionale</p>
+          <h2>Moduli coordinati, un unico perimetro di controllo</h2>
+          <p class="section-lead">Ogni modulo è integrato: la direzione può attivare o disattivare componenti in base al perimetro dell’organizzazione, mantenendo un’unica base dati verificabile.</p>
+        </div>
+        <div class="divider gold"></div>
+      </div>
+      <div class="container list-grid">
+        <div class="list-block">
+          <h3>Regia strategica</h3>
+          <ul>
+            <li>Cruscotti sintetici per CDA e direzioni generali</li>
+            <li>Mappatura dei flussi di incentivo e delle responsabilità</li>
+            <li>Linee guida operative con stati di avanzamento</li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <h3>Operatività controllata</h3>
+          <ul>
+            <li>Checklist procedurali per Community Energy</li>
+            <li>Gestione atti, protocolli e allegati con versioni</li>
+            <li>Monitoraggio scadenze e obblighi di rendicontazione</li>
+          </ul>
+        </div>
+        <div class="list-block">
+          <h3>Affidabilità e sicurezza</h3>
+          <ul>
+            <li>Audit log completo per ogni azione e modifica</li>
+            <li>Autenticazione forte e profilazione per ruolo</li>
+            <li>Backup verificabili e continuità di servizio</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="section">
+      <div class="container section-header">
+        <div>
+          <p class="eyebrow">Metodo</p>
+          <h2>Approccio sequenziale, governiamo complessità</h2>
+          <p class="section-lead">Percorso guidato, con passaggi documentati e stati chiari. Ogni fase è supportata da assistenza metodologica e da controlli automatici di coerenza.</p>
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="container steps">
+        <div class="step">
+          <span class="step-index">1</span>
+          <div>
+            <h3>Allineamento iniziale</h3>
+            <p>Raccolta del perimetro decisionale, integrazione con sistemi esistenti, definizione degli attori.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-index">2</span>
+          <div>
+            <h3>Regole di ingaggio</h3>
+            <p>Configurazione di workflow, responsabilità e criteri di priorità per progetti e incentivi.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-index">3</span>
+          <div>
+            <h3>Monitoraggio continuo</h3>
+            <p>Controlli automatici su scostamenti, adempimenti, livelli di servizio e documenti.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-index">4</span>
+          <div>
+            <h3>Reporting istituzionale</h3>
+            <p>Report sintetici e dossier di evidenze per audit, CDA e interlocutori finanziari.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="identita">
-      <div class="container">
-        <div class="section-header">
-          <h2>Una struttura di regia, non un fornitore</h2>
-          <p class="muted">CERtoUSER non è installatore, non è general contractor: è piattaforma + metodo + governance per decisioni verificabili.</p>
+    <section id="conformita" class="section alt">
+      <div class="container section-header">
+        <div>
+          <p class="eyebrow">Conformità e affidabilità</p>
+          <h2>Presidio normativo e controllo del rischio</h2>
+          <p class="section-lead">Supportiamo la conformità con tracciabilità continua, notifiche su scadenze critiche e matrice di rischio consultabile.</p>
         </div>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Governance prima dell'esecuzione</h3>
-            <p class="muted">Impostiamo processi, ruoli e responsabilità prima di attivare fornitori, evitando conflitti di interesse.</p>
+        <div class="divider gold"></div>
+      </div>
+      <div class="container highlights">
+        <div class="highlight">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <h3>Compliance by design</h3>
+            <p>Modelli procedurali coerenti con linee guida nazionali e obblighi europei, aggiornabili senza interruzioni.</p>
           </div>
-          <div class="card">
-            <h3>Metodologia difendibile</h3>
-            <p class="muted">Assunzioni esplicite, scenari comparati e versioning per scelte replicabili e documentate.</p>
+        </div>
+        <div class="highlight">
+          <span class="dot red" aria-hidden="true"></span>
+          <div>
+            <h3>Segnali di rischio</h3>
+            <p>Alert selettivi su scostamenti di KPI energetici, ritardi documentali e variazioni autorizzative.</p>
           </div>
-          <div class="card">
-            <h3>Interfaccia per stakeholder</h3>
-            <p class="muted">Dashboard, reportistica e audit trail per CDA, enti, banche e partner operativi.</p>
+        </div>
+        <div class="highlight">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <h3>Interoperabilità</h3>
+            <p>API e connettori istituzionali per integrare anagrafiche, protocolli, sistemi finanziari.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="piattaforma">
-      <div class="container">
-        <div class="section-header">
-          <h2>La piattaforma: dati, workflow e verificabilità</h2>
-          <p class="muted">Strumenti per pianificazione, conformità e dialogo con finanziatori e stakeholder ESG.</p>
-        </div>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Analisi &amp; simulazioni</h3>
-            <ul class="list-clean">
-              <li>Valutazioni tecniche ed economiche.</li>
-              <li>Scenari decisionali con assunzioni esplicite.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Workflow &amp; compliance</h3>
-            <ul class="list-clean">
-              <li>Passaggi guidati e controlli di coerenza.</li>
-              <li>Gestione documentale e versioning.</li>
-              <li>Evidenze e tracciabilità delle decisioni (audit trail).</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="badge" aria-hidden="true">Bancabilità</div>
-            <h3>Supporto alla bancabilità</h3>
-            <ul class="list-clean">
-              <li>Readiness documentale per interlocuzione con finanziatori.</li>
-              <li>Data room strutturata: documenti, evidenze, permessi.</li>
-              <li>Tracciabilità economica: ipotesi, parametri, output.</li>
-              <li>Separazione ruoli e responsabilità (governance).</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="badge" aria-hidden="true">ESG</div>
-            <h3>Supporto a rendicontazione ESG</h3>
-            <ul class="list-clean">
-              <li>Impostazione baseline e KPI misurabili.</li>
-              <li>Indicatori energetici e ambientali (consumi, autoproduzione, CO₂ evitata).</li>
-              <li>Indicatori social e governance: trasparenza, tracciabilità, responsabilità.</li>
-              <li>Esportazioni/report per stakeholder (condomini, enti, aziende, partner).</li>
-            </ul>
+    <section id="contatti" class="section">
+      <div class="container contact">
+        <div>
+          <p class="eyebrow">Contatti istituzionali</p>
+          <h2>Un tavolo di lavoro riservato</h2>
+          <p class="section-lead">Per avviare una valutazione condivisa con direzioni generali, board e partner finanziari.</p>
+          <div class="contact-meta">
+            <p><span class="label">Canale riservato:</span> contatti@certouser.it</p>
+            <p><span class="label">Presidio operativo:</span> Roma · Milano · Bruxelles</p>
           </div>
         </div>
-        <p class="platform-note">Le valutazioni sono basate su dati disponibili e su assunzioni esplicitate; l’esito dipende da condizioni tecniche, normative e contrattuali.</p>
-      </div>
-    </section>
-
-    <section id="ambiti">
-      <div class="container">
-        <div class="section-header">
-          <h2>Ambiti di intervento</h2>
-          <p class="muted">Applicazioni operative della piattaforma per soggetti diversi.</p>
-        </div>
-        <div class="ambiti">
-          <div class="ambito">
-            <h3>Condomini</h3>
-            <p class="muted">Aggregazione, autoconsumo e rigenerazione energetica con governance condivisa.</p>
-            <a class="anchor-link" href="#">Rigenera Condominio</a>
-          </div>
-          <div class="ambito">
-            <h3>Enti / Terzo Settore / PA</h3>
-            <p class="muted">Programmi finanziati, partenariati e gestione trasparente verso cittadini e stakeholder.</p>
-            <a class="anchor-link" href="#">Rigenera Terzo Settore</a>
-          </div>
-          <div class="ambito">
-            <h3>Imprese</h3>
-            <p class="muted">Autoconsumo, governance multi-sito e supporto a KPI ESG per supply chain e finanza.</p>
-            <span class="anchor-link" aria-hidden="true">Programmi dedicati</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="metodo">
-      <div class="container">
-        <div class="section-header">
-          <h2>Il metodo</h2>
-          <p class="muted">Prima si decide. Poi si investe.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Qualificazione</h3>
-            <p class="muted">Raccolta dati, soggetti coinvolti, vincoli e obiettivi condivisi.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Analisi normativa e tecnica</h3>
-            <p class="muted">Verifica requisiti, autorizzazioni e configurazioni ammissibili.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Simulazione economica</h3>
-            <p class="muted">Scenari comparati, ipotesi trasparenti e sensibilità su incentivi e costi.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Scelta consapevole</h3>
-            <p class="muted">Decisione tracciata con responsabilità esplicite e versioning.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">5</div>
-            <h3>Esecuzione tramite partner</h3>
-            <p class="muted">Attivazione fornitori qualificati con controllo di coerenza e audit trail.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="perche">
-      <div class="container">
-        <div class="section-header">
-          <h2>Riduzione del rischio prima della creazione di valore</h2>
-          <p class="muted">Strutturiamo decisioni difendibili integrando governance, bancabilità ed ESG.</p>
-        </div>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Responsabilità chiare</h3>
-            <p class="muted">Ruoli separati, livelli di autorizzazione e controlli incrociati.</p>
-          </div>
-          <div class="card">
-            <h3>Coerenza normativa</h3>
-            <p class="muted">Checklist, compliance e tracciabilità documentale a supporto di audit e autorizzazioni.</p>
-          </div>
-          <div class="card">
-            <h3>Supporto alla bancabilità</h3>
-            <p class="muted">Readiness, data room e audit trail per dialogo con banche e finanziatori.</p>
-          </div>
-          <div class="card">
-            <h3>Supporto a ESG</h3>
-            <p class="muted">Baseline, KPI, evidenze e reporting verso stakeholder e supply chain.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contatti">
-      <div class="container">
-        <div class="section-header">
-          <h2>Contatti istituzionali</h2>
-          <p class="muted">Per CDA, enti e partner. Condivisione di materiali e incontri su richiesta.</p>
-        </div>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Informazioni</h3>
-            <p class="muted">info@certouser.it</p>
-            <p class="muted">+39 000 0000 000</p>
-          </div>
-          <div class="card" id="accesso">
-            <h3>Accesso riservato</h3>
-            <p class="muted">Portale per partner, banche ed enti convenzionati.</p>
-            <a class="cta-secondary" href="#">Entra</a>
-          </div>
+        <div class="contact-panel">
+          <div class="panel-heading">Linee di sicurezza</div>
+          <ul>
+            <li>Accessi profilati e audit log continuo</li>
+            <li>Hosting europeo e cifratura end-to-end</li>
+            <li>Procedure di business continuity testate</li>
+          </ul>
+          <a class="link-primary" href="mailto:contatti@certouser.it">Apri il canale</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="flow">
-        <div class="logo" aria-hidden="true">
-          <span class="logo-mark">CE</span>
-          <span>CERtoUSER</span>
-        </div>
-        <div>Piattaforma di regia per la transizione energetica</div>
-        <div class="micro">Powered by DA2</div>
-      </div>
-      <div class="flow">
-        <div><strong>Contatti</strong></div>
-        <div class="muted">info@certouser.it</div>
-        <div class="muted">+39 000 0000 000</div>
-        <a class="anchor-link" href="#">Privacy</a>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">CERtoUSER · Regia per Comunità Energetiche</div>
+      <div class="footer-links">
+        <a href="#mandato">Mandato</a>
+        <a href="#conformita">Conformità</a>
+        <a href="#contatti">Contatti</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.getElementById('menu');
-
-    function toggleMenu() {
-      const isOpen = menu.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const targetId = anchor.getAttribute('href');
-        if (targetId.length > 1 && document.querySelector(targetId)) {
-          e.preventDefault();
-          menu.classList.remove('open');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
