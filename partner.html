@@ -22,60 +22,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
-  <header class="site-header" data-header>
-    <div class="container header__inner">
-      <a class="brand" href="/index.html">
-        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER">
-        <span class="brand-fallback">CERtoUSER</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Apri o chiudi il menu" data-menu-toggle>
-        <span class="menu-toggle__icon" aria-hidden="true"></span>
-        Menu
-      </button>
-      <nav class="nav" id="site-menu" aria-label="Navigazione principale">
-        <a href="/index.html">Home</a>
-        <a href="/chi-siamo.html">Chi siamo</a>
-        <a href="/piattaforma.html">Piattaforma</a>
-        <a href="/ambiti.html">Ambiti</a>
-        <a href="/metodo.html">Metodo</a>
-        <a class="active" href="/partner.html">Partner</a>
-        <a href="/risorse.html">Risorse</a>
-        <a href="/contatti.html">Contatti</a>
-        <a class="btn" href="https://suite.certouser.it">Accesso riservato</a>
-      </nav>
-    </div>
-  </header>
-
-  <div class="mobile-backdrop" data-menu-backdrop></div>
-
-  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__top">
-      <div class="mobile-menu__brand">
-        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
-        <strong style="letter-spacing:0.06em;">CERtoUSER</strong>
+<body class="page-partner">
+  <!-- CONTENT LOCKED: do not edit copy/text without explicit approval. -->
+  <div class="layout">
+    <aside class="sidebar" aria-label="Navigazione principale">
+      <div class="sidebar__brand">
+        <a href="/index.html" class="brand">
+          <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
+          <span class="brand-name">CERtoUSER</span>
+        </a>
+        <button class="sidebar__toggle" type="button" data-sidebar-toggle aria-controls="sidebarDrawer" aria-expanded="false" aria-label="Apri menu">
+          Menu
+        </button>
       </div>
-      <button type="button" class="btn btn--ghost" data-menu-close aria-label="Chiudi menu">✕</button>
-    </div>
-
-    <div class="mobile-menu__links">
+      <nav class="sidebar__nav" aria-label="Menu">
       <a href="/index.html">Home</a>
       <a href="/chi-siamo.html">Chi siamo</a>
       <a href="/piattaforma.html">Piattaforma</a>
       <a href="/ambiti.html">Ambiti</a>
       <a href="/metodo.html">Metodo</a>
-      <a href="/partner.html">Partner</a>
+      <a class="active" href="/partner.html">Partner</a>
       <a href="/risorse.html">Risorse</a>
       <a href="/contatti.html">Contatti</a>
-    </div>
+      </nav>
+      <div class="sidebar__footer">
+        <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
+        <div class="powered">Powered by DA2</div>
+      </div>
+    </aside>
 
-    <div class="mobile-menu__cta">
-      <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero hero--split" data-hero="/IMG/AdobeStock_1837139337.jpeg">
+    <main class="content" id="main">
+<section class="hero hero--split" data-hero="/IMG/AdobeStock_1837139337.jpeg">
       <div class="hero__media" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
@@ -109,9 +86,8 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer">
+      <footer class="footer">
     <div class="container footer-inner">
       <div class="divider" aria-hidden="true"></div>
       <div class="footer-brand">
@@ -124,6 +100,34 @@
       <p>CERtoUSER · Piattaforma di regia per Comunità Energetiche e investimenti energetici responsabili.</p>
     </div>
   </footer>
+    </main>
+  </div>
+
+  <div class="backdrop" data-sidebar-backdrop></div>
+
+  <aside class="drawer" id="sidebarDrawer" aria-hidden="true">
+    <div class="drawer__top">
+      <div class="drawer__brand">
+        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" />
+        <span class="brand-name">CERtoUSER</span>
+      </div>
+      <button class="btn btn--ghost" type="button" data-sidebar-close aria-label="Chiudi menu">✕</button>
+    </div>
+    <nav class="drawer__nav" aria-label="Menu mobile">
+      <a href="/index.html">Home</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/piattaforma.html">Piattaforma</a>
+      <a href="/ambiti.html">Ambiti</a>
+      <a href="/metodo.html">Metodo</a>
+      <a class="active" href="/partner.html">Partner</a>
+      <a href="/risorse.html">Risorse</a>
+      <a href="/contatti.html">Contatti</a>
+    </nav>
+    <div class="drawer__cta">
+      <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
+    </div>
+  </aside>
+
   <script src="/assets/js/site.js"></script>
 </body>
 </html>
