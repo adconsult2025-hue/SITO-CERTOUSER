@@ -4,20 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti | CERtoUSER</title>
-  <meta name="description" content="Contatta CERtoUSER: piattaforma di regia per Comunità Energetiche, incentivi e governance energetica.">
+  <meta name="description" content="Contatta CERtoUSER per scoprire come governare comunità energetiche, incentivi e investimenti sostenibili.">
+  <link rel="canonical" href="https://www.certouser.it/contatti.html">
+  <meta property="og:title" content="Contatti | CERtoUSER">
+  <meta property="og:description" content="Parla con CERtoUSER: governance, metodo e piattaforma per comunità energetiche e progetti energetici.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.certouser.it/contatti.html">
+  <meta property="og:image" content="/IMG/AdobeStock_1833857921.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contatti | CERtoUSER">
+  <meta name="twitter:description" content="Parla con CERtoUSER: governance, metodo e piattaforma per comunità energetiche e progetti energetici.">
+  <meta name="twitter:image" content="/IMG/AdobeStock_1833857921.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrapper header-inner">
+  <header class="site-header" data-header>
+    <div class="container header__inner">
       <a class="brand" href="/index.html">
         <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER">
         <span class="brand-fallback">CERtoUSER</span>
       </a>
-      <nav class="nav" aria-label="Navigazione principale">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Apri o chiudi il menu" data-nav-toggle>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="nav" id="site-menu" data-nav aria-label="Navigazione principale">
         <a href="/index.html">Home</a>
         <a href="/chi-siamo.html">Chi siamo</a>
         <a href="/piattaforma.html">Piattaforma</a>
@@ -28,63 +44,44 @@
         <a class="active" href="/contatti.html">Contatti</a>
         <a class="btn" href="https://suite.certouser.it">Accesso riservato</a>
       </nav>
-      <button class="menu-toggle" aria-label="Apri o chiudi il menu">☰</button>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrapper">
-        <div class="breadcrumb"><a href="/index.html">Home</a> · Contatti</div>
-        <h1>Parliamone</h1>
-        <p>Condividete il contesto e il ruolo: vi risponderemo con un quadro chiaro su come procedere.</p>
+    <section class="hero hero--split" data-hero="/IMG/AdobeStock_1833857921.jpeg">
+      <div class="hero__media" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Contatti</p>
+          <h1>Parliamone</h1>
+          <p class="lead">Un confronto iniziale aiuta a capire se la piattaforma può sostenere il vostro modello operativo.</p>
+          <a class="btn" href="mailto:info@certouser.it">info@certouser.it</a>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrapper grid cols-2">
+      <div class="container">
         <div class="card">
-          <h3>Scrivici</h3>
-          <form name="contatti" method="post" data-netlify="true">
-            <input type="hidden" name="form-name" value="contatti">
-            <label>Nome
-              <input type="text" name="nome" required>
+          <form>
+            <label>Nome e cognome
+              <input type="text" name="nome" placeholder="Il tuo nome">
             </label>
             <label>Email
-              <input type="email" name="email" required>
-            </label>
-            <label>Ruolo
-              <select name="ruolo" required>
-                <option value="">Seleziona</option>
-                <option>Amministratore</option>
-                <option>Ente/PA</option>
-                <option>Impresa</option>
-                <option>Partner tecnico</option>
-                <option>Altro</option>
-              </select>
+              <input type="email" name="email" placeholder="nome@azienda.it">
             </label>
             <label>Messaggio
-              <textarea name="messaggio" required></textarea>
+              <textarea name="messaggio" placeholder="Raccontaci il contesto"></textarea>
             </label>
             <button class="btn" type="submit">Invia</button>
           </form>
-          <p class="muted">Nota privacy: inserire riferimento informativa privacy e contatto DPO (placeholder). È possibile scrivere anche a <a href="mailto:info@certouser.it">info@certouser.it</a>.</p>
-        </div>
-        <div class="card">
-          <h3>Modalità di contatto</h3>
-          <ul class="list">
-            <li><strong>Condivisione contesto</strong><span>Obiettivi, perimetro, tempi.</span></li>
-            <li><strong>Call conoscitiva</strong><span>Verifica preliminare di requisiti e stakeholder.</span></li>
-            <li><strong>Accesso riservato</strong><span>Onboarding in piattaforma se coerente.</span></li>
-          </ul>
-          <div class="callout">Preferiamo dialoghi documentati: ogni confronto produce note e azioni.</div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrapper footer-inner">
+    <div class="container footer-inner">
       <div class="divider" aria-hidden="true"></div>
       <div class="footer-brand">
         <img class="brand-logo brand-logo--small" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" loading="lazy">
@@ -93,7 +90,7 @@
           <div class="footer-powered">Powered by DA2</div>
         </div>
       </div>
-      <p>CERtoUSER · Contatti e richieste di valutazione preliminare.</p>
+      <p>CERtoUSER · Piattaforma di regia per Comunità Energetiche e investimenti energetici responsabili.</p>
     </div>
   </footer>
   <script src="/assets/js/site.js"></script>

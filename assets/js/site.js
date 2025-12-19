@@ -1,20 +1,35 @@
-const nav = document.querySelector('.nav');
-const toggle = document.querySelector('.menu-toggle');
-const links = document.querySelectorAll('.nav a');
-const header = document.querySelector('.site-header');
+const nav = document.querySelector('[data-nav]');
+const toggle = document.querySelector('[data-nav-toggle]');
+const header = document.querySelector('[data-header]');
+const firstNavLink = nav ? nav.querySelector('a') : null;
+
+const setMenuState = (open) => {
+  if (!nav || !toggle) return;
+  nav.classList.toggle('is-open', open);
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.classList.toggle('menu-open', open);
+  if (open && firstNavLink) {
+    firstNavLink.focus();
+  }
+};
 
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
+    const isOpen = nav.classList.contains('is-open');
+    setMenuState(!isOpen);
   });
 }
 
-links.forEach((link) => {
-  link.addEventListener('click', () => {
-    if (nav.classList.contains('open')) {
-      nav.classList.remove('open');
-    }
+if (nav) {
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
   });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+    setMenuState(false);
+  }
 });
 
 window.addEventListener('scroll', () => {
@@ -23,5 +38,25 @@ window.addEventListener('scroll', () => {
     header.classList.add('shadow');
   } else {
     header.classList.remove('shadow');
+  }
+});
+
+// Hero background
+const heroes = document.querySelectorAll('.hero[data-hero] .hero__media');
+heroes.forEach((media) => {
+  const section = media.closest('.hero');
+  const src = section?.dataset.hero;
+  if (src) {
+    media.style.setProperty('--hero-image', `url('${src}')`);
+    media.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.55), rgba(5,5,5,0.45)), var(--hero-image)`;
+  }
+});
+
+// Card media background
+const medias = document.querySelectorAll('[data-media]');
+medias.forEach((el) => {
+  const src = el.dataset.media;
+  if (src) {
+    el.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.35), rgba(5,5,5,0.5)), url('${src}')`;
   }
 });
