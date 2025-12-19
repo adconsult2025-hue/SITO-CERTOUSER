@@ -14,7 +14,7 @@
   <header class="site-header">
     <div class="wrapper header-inner">
       <a class="brand" href="/index.html">
-        <img src="/assets/img/logo.png" alt="CERtoUSER logo" onerror="this.style.display='none'">
+        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER">
         <span class="brand-fallback">CERtoUSER</span>
       </a>
       <nav class="nav" aria-label="Navigazione principale">
@@ -44,16 +44,25 @@
     <section class="section">
       <div class="wrapper grid cols-3">
         <div class="card">
+          <div class="card-media" style="--card-media: url('/IMG/AdobeStock_1837139337.jpeg');">
+            <div class="card-media__title">Condomini</div>
+          </div>
           <h3>Condomini</h3>
           <p>CER/CEC condominiali con governance condivisa, simulazioni e iter autorizzativi supportati.</p>
           <a class="btn text" href="/condomini.html">Vai alla pagina</a>
         </div>
         <div class="card">
+          <div class="card-media" style="--card-media: url('/IMG/AdobeStock_848935346.jpeg');">
+            <div class="card-media__title">Enti / Terzo Settore / PA</div>
+          </div>
           <h3>Enti / Terzo Settore / PA</h3>
           <p>Compliance procedurale, rendicontazione e trasparenza verso comunità e finanziatori.</p>
           <a class="btn text" href="/enti-terzo-settore.html">Vai alla pagina</a>
         </div>
         <div class="card">
+          <div class="card-media" style="--card-media: url('/IMG/AdobeStock_1833857921.jpeg');">
+            <div class="card-media__title">Imprese</div>
+          </div>
           <h3>Imprese</h3>
           <p>Autoconsumo, governance multilivello, reporting ESG per stakeholder e partner finanziari.</p>
           <a class="btn text" href="/imprese.html">Vai alla pagina</a>
@@ -63,8 +72,15 @@
   </main>
 
   <footer class="footer">
-    <div class="wrapper">
-      <div class="divider"></div>
+    <div class="wrapper footer-inner">
+      <div class="divider" aria-hidden="true"></div>
+      <div class="footer-brand">
+        <img class="brand-logo brand-logo--small" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" loading="lazy">
+        <div>
+          <div><strong>CERtoUSER</strong></div>
+          <div class="footer-powered">Powered by DA2</div>
+        </div>
+      </div>
       <p>CERtoUSER · Ambiti di applicazione con regole e ruoli trasparenti.</p>
     </div>
   </footer>
