@@ -61,15 +61,13 @@ img {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.02);
-  isolation: isolate;
 }
 
 .media-satin img {
   width: 100%;
   height: auto;
   display: block;
-  filter: saturate(0.78) contrast(0.96) brightness(0.92);
-  transform: translateZ(0);
+  filter: saturate(0.82) contrast(0.97) brightness(0.94);
 }
 
 .media-satin > * {
@@ -82,10 +80,12 @@ img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    rgba(5, 5, 5, 0.10),
-    rgba(5, 5, 5, 0.32)
-  );
+  background: linear-gradient(rgba(5, 5, 5, 0.10), rgba(5, 5, 5, 0.28));
+}
+
+.media-satin--wide {
+  display: block;
+  width: 100%;
 }
 
 header,
@@ -288,6 +288,27 @@ footer {
   border-bottom: 1px solid var(--stroke);
 }
 
+.hero__media,
+.card__media {
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.media-satin img,
+.card img,
+.hero img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.media-fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .hero__inner {
   position: relative;
   margin-top: 0;
@@ -441,6 +462,14 @@ p {
 
 .page-ambiti .grid.cols-3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.page-chi-siamo .hero__media--cubes {
+  background-position: center top !important;
+}
+
+.page-chi-siamo .img--cubes {
+  object-position: center top;
 }
 
 .card:hover,
@@ -753,5 +782,22 @@ body.sidebar-open .drawer {
   .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-chi-siamo .hero__media {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .page-chi-siamo .hero__media--cubes {
+    background-size: contain;
+    background-color: #070707;
+  }
+
+  .page-chi-siamo .img--cubes {
+    object-fit: contain;
+    background: #070707;
   }
 }
