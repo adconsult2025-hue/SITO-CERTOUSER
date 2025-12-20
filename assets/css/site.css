@@ -63,10 +63,18 @@ img {
   background: rgba(255, 255, 255, 0.02);
 }
 
-.media-satin img {
+
+.media-satin img,
+.figure-media img,
+.media-frame img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.media-satin img {
   filter: saturate(0.82) contrast(0.97) brightness(0.94);
 }
 
