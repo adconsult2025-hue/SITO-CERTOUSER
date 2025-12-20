@@ -472,6 +472,57 @@ p {
   object-position: center top;
 }
 
+/* Partner page: card hero full width */
+.page-partner .card--full {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Rendi la sezione intro del partner una colonna unica */
+.page-partner .partner-intro,
+.page-partner .hero-grid,
+.page-partner .intro-grid {
+  display: block;
+}
+
+/* Media detail: altezza coerente e zoom sul soggetto */
+.media-detail {
+  max-width: 980px;
+  margin-top: 18px;
+}
+
+.media-detail img.img-zoom-cubes {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: 75% 60%;
+  display: block;
+}
+
+/* Mobile: altezza e posizione ottimizzate */
+@media (max-width: 600px) {
+  .media-detail img.img-zoom-cubes {
+    height: 240px;
+    object-position: 70% 55%;
+  }
+}
+
+.media-satin figcaption,
+.media-detail figcaption {
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .media-satin figcaption,
+  .media-detail figcaption {
+    font-size: 12.5px;
+  }
+}
+
 .card:hover,
 .card:focus-within {
   border-color: rgba(95, 207, 128, 0.4);
