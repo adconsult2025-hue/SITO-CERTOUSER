@@ -24,14 +24,19 @@
 </head>
 <body class="intro">
   <main class="intro-wrap" id="main">
-    <div class="intro-media media-satin">
-      <img src="/IMG/intro.jpg" alt="Panoramica CERtoUSER" width="1600" height="900" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none';document.documentElement.classList.add('no-intro-img');">
-      <div class="intro-fallback" aria-hidden="true">
-        <div class="intro-fallback__logo">
-          <img src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" loading="lazy">
-          <span>CERtoUSER</span>
-        </div>
-      </div>
+    <div class="intro-media">
+      <video
+        class="intro-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/IMG/intro.jpg"
+        onerror="this.style.display='none';document.documentElement.classList.add('no-intro-video');"
+      >
+        <source src="/IMG/intro.mp4" type="video/mp4" />
+      </video>
     </div>
     <h1 class="intro-title">BENVENUTI SU CER TO USER</h1>
     <p class="intro-subtitle">Scopri chi siamo e cosa facciamo</p>

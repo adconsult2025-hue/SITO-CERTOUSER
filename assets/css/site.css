@@ -57,47 +57,31 @@ body.intro {
 }
 
 .intro-media {
+  position: relative;
   width: 100%;
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.03);
-  position: relative;
   box-shadow: var(--shadow);
 }
 
-.intro-media img {
+.intro-video {
   width: 100%;
   height: auto;
   display: block;
   filter: saturate(0.85) contrast(0.97) brightness(0.94);
 }
 
-.intro-fallback {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 38px 14px;
-  gap: 12px;
-  color: var(--muted);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.intro-fallback__logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.intro-fallback__logo img {
-  height: 36px;
-  width: auto;
+.intro-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(5, 5, 5, 0.10),
+    rgba(5, 5, 5, 0.28)
+  );
 }
 
 .intro-title {
@@ -125,22 +109,18 @@ body.intro {
   border-radius: 14px;
 }
 
-.no-intro-img .intro-media {
-  padding: 48px 18px;
-  position: relative;
+.no-intro-video .intro-media {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.no-intro-img .intro-media::before {
-  content: "";
-  display: block;
-  height: 220px;
-  border-radius: 18px;
-  background: radial-gradient(circle at 20% 20%, rgba(95, 207, 128, 0.22), rgba(5, 5, 5, 0.4)),
-    radial-gradient(circle at 70% 0%, rgba(200, 164, 93, 0.28), rgba(5, 5, 5, 0.35));
-}
-
-.no-intro-img .intro-fallback {
-  display: inline-flex;
+.no-intro-video .intro-media::before {
+  content: "CERtoUSER";
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 @media (max-width: 640px) {
@@ -154,6 +134,12 @@ body.intro {
 
   .intro-actions .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-media {
+    border-radius: 18px;
   }
 }
 
