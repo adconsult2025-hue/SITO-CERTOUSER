@@ -178,6 +178,8 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .icon {
@@ -442,7 +444,7 @@ footer {
   height: clamp(220px, 48vw, 300px);
   background-color: #0b0b0b;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   isolation: isolate;
   border-bottom: 1px solid var(--stroke);
