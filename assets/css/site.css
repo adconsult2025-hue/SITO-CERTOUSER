@@ -35,67 +35,82 @@ body {
   font-size: 15px;
 }
 
-/* Intro landing */
+/* Intro fullscreen */
 body.intro {
+  background: #050505;
+}
+
+body.intro--fullscreen {
+  margin: 0;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-  background: radial-gradient(circle at 20% 20%, rgba(95, 207, 128, 0.14), transparent 32%),
-    radial-gradient(circle at 80% 10%, rgba(200, 164, 93, 0.12), transparent 34%),
-    var(--bg);
-}
-
-.intro-wrap {
-  width: min(980px, 100%);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.intro-media {
-  position: relative;
-  width: 100%;
-  border-radius: 22px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: var(--shadow);
+  background: #050505;
 }
 
-.intro-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: saturate(0.85) contrast(0.97) brightness(0.94);
+.intro-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-.intro-media::after {
-  content: "";
+/* Video full-bleed */
+.intro-bgvideo {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.85) contrast(0.97) brightness(0.94);
+  transform: translateZ(0);
+}
+
+/* Overlay satinato per leggibilità */
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 50% 35%, rgba(5, 5, 5, 0.10), rgba(5, 5, 5, 0.55)),
+    linear-gradient(rgba(5, 5, 5, 0.25), rgba(5, 5, 5, 0.55));
   pointer-events: none;
-  background: linear-gradient(
-    rgba(5, 5, 5, 0.10),
-    rgba(5, 5, 5, 0.28)
-  );
+}
+
+/* Contenuto centrato */
+.intro-center {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+/* Card testo (istituzionale, sobria) */
+.intro-card {
+  width: min(740px, 92vw);
+  text-align: center;
+  padding: 22px 22px 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(7, 7, 7, 0.62);
+  backdrop-filter: blur(10px);
 }
 
 .intro-title {
-  margin: 18px 0 6px;
+  margin: 0 0 8px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  font-size: clamp(20px, 2.4vw, 30px);
+  letter-spacing: 0.10em;
+  font-size: clamp(20px, 2.4vw, 32px);
+  line-height: 1.15;
   text-transform: uppercase;
 }
 
 .intro-subtitle {
   margin: 0 0 16px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 14.5px;
+  line-height: 1.45;
 }
 
 .intro-actions {
@@ -109,37 +124,28 @@ body.intro {
   border-radius: 14px;
 }
 
-.no-intro-video .intro-media {
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Fallback se il video non carica */
+.no-intro-video body.intro--fullscreen {
+  overflow: auto;
 }
 
-.no-intro-video .intro-media::before {
-  content: "CERtoUSER";
-  letter-spacing: 0.12em;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.65);
+.no-intro-video .intro-screen {
+  background: radial-gradient(900px 500px at 50% 30%, rgba(24, 208, 123, 0.10), rgba(5, 5, 5, 0.92));
 }
 
-@media (max-width: 640px) {
-  body.intro {
-    padding: 16px;
-  }
-
-  .intro-actions {
-    width: 100%;
-  }
-
-  .intro-actions .btn {
-    width: 100%;
-  }
+.no-intro-video .intro-bgvideo {
+  display: none !important;
 }
 
+/* Mobile tuning */
 @media (max-width: 600px) {
-  .intro-media {
+  .intro-card {
+    padding: 18px 16px 16px;
     border-radius: 18px;
+  }
+
+  .intro-title {
+    letter-spacing: 0.08em;
   }
 }
 
