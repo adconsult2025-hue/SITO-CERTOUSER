@@ -609,21 +609,13 @@ p {
   max-width: 1180px;
 }
 
-.page-ambiti .hero__media {
-  display: none;
-}
-
-.page-ambiti .hero.hero--split {
-  grid-template-columns: 1fr;
-}
-
 .page-ambiti .hero__content,
 .page-ambiti .hero__content .lead {
   max-width: 88ch;
 }
 
-.page-ambiti .grid.cols-3 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.page-ambiti .grid {
+  grid-template-columns: 1fr;
 }
 
 .page-chi-siamo .hero__media--cubes {
