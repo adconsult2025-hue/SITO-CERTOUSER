@@ -694,6 +694,36 @@ p {
   font-weight: 650;
 }
 
+/* Card con icona sopra */
+.card-iconline {
+  margin-bottom: 10px;
+}
+
+.card-iconline .icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+/* Se esiste un header flex che teneva icona+titolo in linea, neutralizzalo solo in piattaforma */
+.page-piattaforma .card-head,
+.page-piattaforma .card-header,
+.page-piattaforma .card__head {
+  display: block !important;
+}
+
+/* Evita che l'icona “frazioni” il testo */
+.page-piattaforma .card-head .icon-wrap,
+.page-piattaforma .card-header .icon-wrap,
+.page-piattaforma .card__head .icon-wrap {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
 .card .accent {
   position: absolute;
   top: 12px;
