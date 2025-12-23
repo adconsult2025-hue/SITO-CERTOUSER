@@ -450,6 +450,14 @@ footer {
   border-bottom: 1px solid var(--stroke);
 }
 
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .hero__media,
 .card__media {
   background-position: center center !important;
@@ -579,6 +587,9 @@ p {
   position: relative;
   overflow: hidden;
   transition: border-color var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .card__media {
@@ -696,17 +707,45 @@ p {
 
 /* Card con icona sopra */
 .card-iconline {
-  margin-bottom: 10px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
 .card-iconline .icon-wrap {
   width: 40px;
   height: 40px;
   border-radius: 14px;
+  margin-right: 0;
 }
 
 .card-title {
-  margin-top: 0;
+  margin: 0 0 10px;
+  font-weight: 650;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card-links {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.card-links a {
+  color: var(--text);
+}
+
+.card-links a:hover,
+.card-links a:focus-visible {
+  color: var(--green);
+  outline: none;
 }
 
 /* Se esiste un header flex che teneva icona+titolo in linea, neutralizzalo solo in piattaforma */
