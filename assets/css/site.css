@@ -653,10 +653,12 @@ p {
 }
 
 .page-partner .logo-media {
-  width: min(380px, 80vw);
-  max-height: 200px;
-  object-fit: contain;
+  max-width: 380px;
+  width: 100%;
+  height: auto;
   display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 /* Rendi la sezione intro del partner una colonna unica */
@@ -938,6 +940,44 @@ textarea:focus {
   border-color: var(--green);
   outline: none;
   box-shadow: 0 0 0 3px rgba(95, 207, 128, 0.15);
+}
+
+.contact-form {
+  padding: 24px 0;
+}
+
+.contact-form .form {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  outline: 2px solid #18d07b;
 }
 
 textarea {

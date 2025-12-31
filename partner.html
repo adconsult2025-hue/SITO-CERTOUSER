@@ -52,7 +52,7 @@
     </aside>
 
     <main class="content" id="main">
-<section class="hero hero--split partner-intro" data-hero="/IMG/AdobeStock_1837139337.jpeg">
+<section class="hero hero--split partner-intro">
       <figure class="hero-media">
         <img src="/IMG/logo%20cer%20to%20user%20(2).png"
              alt="Logo CERtoUSER"
@@ -66,6 +66,56 @@
           <p class="lead">CERtoUSER definisce ruoli, responsabilità e standard condivisi. I partner operano dentro un sistema controllato che tutela beneficiari, investitori e qualità degli interventi.</p>
           <a class="btn" href="/contatti.html">Contattaci</a>
         </div>
+      </div>
+    </section>
+
+    <section class="contact-form">
+      <div class="container">
+        <h3>Contattaci</h3>
+        <form id="partnerContactForm" class="form" action="/contatti" method="POST">
+          <label for="contattoTipo">Chi sei?</label>
+          <select id="contattoTipo" name="contattoTipo" required>
+            <option value="" disabled selected>Seleziona una categoria</option>
+            <option>Amministratore di condominio</option>
+            <option>Tecnico (Arch./Ing.)</option>
+            <option>Studio ESG</option>
+            <option>ETS</option>
+            <option>Impresa (Serramentista/Thermoidraulico/Edile/Fotovoltaico)</option>
+            <option>Altro</option>
+          </select>
+
+          <div class="field-group">
+            <label for="nome">Nome*</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div class="field-group">
+            <label for="cognome">Cognome*</label>
+            <input type="text" id="cognome" name="cognome" required />
+          </div>
+          <div class="field-group">
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="field-group">
+            <label for="telefono">Telefono*</label>
+            <input type="tel" id="telefono" name="telefono" required />
+          </div>
+
+          <div class="field-group optional-field" id="aziendaField" style="display:none;">
+            <label for="azienda">Denominazione/studio</label>
+            <input type="text" id="azienda" name="azienda" />
+          </div>
+          <div class="field-group optional-field" id="ruoloField" style="display:none;">
+            <label for="ruolo">Ruolo/Settore</label>
+            <input type="text" id="ruolo" name="ruolo" />
+          </div>
+
+          <div class="field-group">
+            <label for="note">Messaggio</label>
+            <textarea id="note" name="note" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Invia</button>
+        </form>
       </div>
     </section>
 
@@ -132,6 +182,23 @@
       <a class="btn btn--primary" href="https://suite.certouser.it">Accesso riservato</a>
     </div>
   </aside>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contattoTipo = document.getElementById('contattoTipo');
+      const aziendaField = document.getElementById('aziendaField');
+      const ruoloField = document.getElementById('ruoloField');
+
+      contattoTipo.addEventListener('change', function() {
+        aziendaField.style.display = 'none';
+        ruoloField.style.display = 'none';
+        if (this.value) {
+          aziendaField.style.display = 'block';
+          ruoloField.style.display = 'block';
+        }
+      });
+    });
+  </script>
 
   <script src="/assets/js/site.js"></script>
 </body>
