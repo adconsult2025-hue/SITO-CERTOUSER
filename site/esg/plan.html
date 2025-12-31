@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piano ESG (Corporate)</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .page-header h1 { margin-bottom: 6px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-top: 16px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .label { display: block; font-weight: 600; margin-bottom: 6px; }
+    .input, select, textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    .btn { background: #0a7cff; color: #fff; border: none; padding: 10px 14px; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background: #0968d3; }
+    .badge { display: inline-block; padding: 4px 8px; background: #eef3ff; color: #0a4da0; border-radius: 6px; font-size: 12px; margin-right: 6px; }
+    .muted { color: #666; font-size: 14px; }
+    .action { border: 1px solid #e6e6e6; border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>Piano ESG (Corporate)</h1>
+    <p class="muted">Strada 2: parti dall’obiettivo, CERtoUSER propone interventi e canali compatibili (CT/CER/altro).</p>
+  </header>
+
+  <section class="card">
+    <h2>Input</h2>
+    <div class="grid-2">
+      <div>
+        <label class="label">Profilo (Strada)</label>
+        <select class="input" id="profile_type">
+          <option value="condominio">Condominio (Strada 1 – ESG non centrale)</option>
+          <option value="terzo_settore">Terzo Settore / ETS (Strada 2 – ESG + Economia)</option>
+          <option value="corporate" selected>Corporate (Strada 2 – ESG + Economia)</option>
+        </select>
+      </div>
+      <div>
+        <label class="label">Tipo pratica CT (workflow)</label>
+        <select class="input" id="ct_type">
+          <option value="terzo" selected>Terzo settore (Corporate)</option>
+          <option value="condominio">Condominio</option>
+          <option value="pa">Pubblica Amministrazione</option>
+        </select>
+      </div>
+      <div>
+        <label class="label">Baseline elettrico (kWh/anno)</label>
+        <input class="input" id="electric_kwh" type="number" value="1200000" />
+      </div>
+      <div>
+        <label class="label">Baseline termico (kWh/anno)</label>
+        <input class="input" id="thermal_kwh" type="number" value="350000" />
+      </div>
+      <div>
+        <label class="label">Riduzione CO₂ target (%)</label>
+        <input class="input" id="co2_target_percent" type="number" value="30" />
+      </div>
+      <div>
+        <label class="label">Budget indicativo (€)</label>
+        <input class="input" id="budget_eur" type="number" placeholder="es. 800000" />
+      </div>
+      <div>
+        <label class="label">Timeline (mesi)</label>
+        <input class="input" id="timeline_months" type="number" value="36" />
+      </div>
+      <div>
+        <label class="label">Prezzo energia (€/kWh) – stima economica</label>
+        <input class="input" id="energy_price_eur_kwh" type="number" step="0.01" value="0.25" />
+      </div>
+      <div>
+        <label class="label">CAPEX limite (€/anno) – opzionale</label>
+        <input class="input" id="capex_limit_eur" type="number" step="1" placeholder="es. 1500000" />
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+      <button class="btn" id="btn_generate">Genera Piano</button>
+      <label style="display:flex; align-items:center; gap:8px;">
+        <input type="checkbox" id="maximize_incentives" checked />
+        <span class="muted">Massimizza incentivi (dove compatibile)</span>
+      </label>
+    </div>
+  </section>
+
+  <section class="card" id="out" style="display:none;">
+    <h2>Output</h2>
+    <div id="baseline_box" class="muted"></div>
+    <div id="economy_box" class="muted" style="margin-top:6px;"></div>
+    <div id="alerts_box" style="margin-top:10px;"></div>
+    <div id="actions_box" style="margin-top:12px;"></div>
+    <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+      <button class="btn" id="btn_precompile_ct">Precompila CT (bozza)</button>
+      <button class="btn" id="btn_route_alt">Instrada Alternative</button>
+    </div>
+    <p class="muted" style="margin-top:10px;">Nota: in MVP questi pulsanti non scrivono pratiche automaticamente. Servono come punto di aggancio sicuro.</p>
+  </section>
+
+  <script src="plan.js"></script>
+</body>
+</html>
