@@ -172,21 +172,6 @@
     </main>
   </div>
 
-  <script>
-    // Sidebar toggle
-    const toggle = document.querySelector('[data-sidebar-toggle]');
-    const sidebar = document.querySelector('.sidebar');
-    if (toggle && sidebar) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        sidebar.classList.toggle('sidebar--open');
-      });
-    }
-    // Hero background
-    document.querySelectorAll('[data-hero]').forEach(el => {
-      el.style.setProperty('--hero-bg', `url('${el.dataset.hero}')`);
-    });
-  </script>
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>
