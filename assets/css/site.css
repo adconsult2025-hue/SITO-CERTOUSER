@@ -1273,3 +1273,219 @@ body.intro--fullscreen {
   background: radial-gradient(900px 500px at 50% 30%, rgba(24,208,123,0.10), rgba(5,5,5,0.92));
 }
 .no-intro-video .intro-bgvideo { display: none !important; }
+
+/* =============================================
+   MOBILE OPTIMIZATION — certouser.it
+   ============================================= */
+
+@media (max-width: 980px) {
+
+  /* Sidebar top bar mobile */
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: auto;
+    padding: 12px 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    z-index: 100;
+  }
+
+  .sidebar__brand {
+    flex: 1;
+  }
+
+  .brand-logo {
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .sidebar__toggle {
+    display: inline-flex;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* Content padding mobile */
+  .content {
+    padding: 0 0 48px;
+  }
+
+  .content > * {
+    max-width: 100%;
+  }
+
+  /* Hero mobile */
+  .hero__media {
+    height: clamp(180px, 45vw, 240px);
+  }
+
+  .hero__inner {
+    padding: 12px 16px 16px;
+  }
+
+  .hero__content {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .hero__content .lead {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Sections */
+  .section {
+    padding: 24px 0;
+  }
+
+  .section .container,
+  .section > .container {
+    padding: 0 16px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Grid mobile — sempre colonna singola */
+  .grid.cols-2,
+  .grid.cols-3,
+  .grid.cols-4 {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  /* Headings */
+  h2 {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem) !important;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+
+  /* Buttons — non full width su mobile (solo dentro sezioni) */
+  .hero__content .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .section .btn {
+    min-height: 44px;
+  }
+
+  /* Feature list */
+  .feat {
+    padding: 14px 16px;
+  }
+
+  .feat h3 {
+    font-size: 0.95rem;
+  }
+
+  /* FAQ */
+  .faq-item {
+    padding: 14px 0;
+  }
+
+  .faq-item h3 {
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 16px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .footer p {
+    font-size: 13px;
+  }
+
+  /* Approfondimenti links */
+  .section a.card h3 {
+    font-size: 0.9rem;
+  }
+
+  /* Landing page hero */
+  .lp-lead {
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  /* Stats / numeri */
+  .stat-number,
+  .kpi-number {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  /* Ownership section */
+  .section .card[style*="border-left"] {
+    padding: 16px;
+  }
+}
+
+/* Extra small — telefoni piccoli */
+@media (max-width: 400px) {
+  .brand-name {
+    display: none; /* mostra solo logo su schermi molto piccoli */
+  }
+
+  .hero__content h1 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar__toggle {
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+}
+
+/* Touch target minimi (accessibility) */
+@media (max-width: 980px) {
+  .sidebar__nav a,
+  .drawer__nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+}
