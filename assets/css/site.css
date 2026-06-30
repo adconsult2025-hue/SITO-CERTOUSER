@@ -229,7 +229,7 @@ img {
 }
 
 .media-satin img {
-  filter: saturate(1.0) contrast(1.0) brightness(1.0);
+  filter: brightness(1.35) saturate(1.15) contrast(0.95);
 }
 
 .media-satin > * {
@@ -242,7 +242,7 @@ img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(rgba(5, 5, 5, 0.04), rgba(5, 5, 5, 0.12));
+  background: transparent;
 }
 
 .media-satin--wide {
@@ -456,6 +456,7 @@ footer {
   object-fit: cover;
   object-position: center;
   display: block;
+  filter: brightness(1.35) saturate(1.15) contrast(0.95);
 }
 
 .hero__media,
@@ -470,6 +471,7 @@ footer {
 .hero img {
   object-fit: cover;
   object-position: center center;
+  filter: brightness(1.35) saturate(1.15) contrast(0.95);
 }
 
 .media-fixed img {
@@ -607,7 +609,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0.10), rgba(5, 5, 5, 0.28));
+  background: transparent;
   z-index: 1;
 }
 
