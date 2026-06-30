@@ -61,7 +61,7 @@ body.intro--fullscreen {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(0.85) contrast(0.97) brightness(0.94);
+  filter: saturate(1.0) contrast(1.0) brightness(0.96);
   transform: translateZ(0);
 }
 
@@ -70,8 +70,8 @@ body.intro--fullscreen {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1200px 600px at 50% 35%, rgba(5, 5, 5, 0.10), rgba(5, 5, 5, 0.55)),
-    linear-gradient(rgba(5, 5, 5, 0.25), rgba(5, 5, 5, 0.55));
+    radial-gradient(1200px 600px at 50% 35%, rgba(5, 5, 5, 0.05), rgba(5, 5, 5, 0.35)),
+    linear-gradient(rgba(5, 5, 5, 0.15), rgba(5, 5, 5, 0.38));
   pointer-events: none;
 }
 
@@ -229,7 +229,7 @@ img {
 }
 
 .media-satin img {
-  filter: saturate(0.82) contrast(0.97) brightness(0.94);
+  filter: saturate(1.0) contrast(1.0) brightness(1.0);
 }
 
 .media-satin > * {
@@ -242,7 +242,7 @@ img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(rgba(5, 5, 5, 0.10), rgba(5, 5, 5, 0.28));
+  background: linear-gradient(rgba(5, 5, 5, 0.04), rgba(5, 5, 5, 0.12));
 }
 
 .media-satin--wide {
@@ -607,7 +607,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0.35), rgba(5, 5, 5, 0.55));
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0.10), rgba(5, 5, 5, 0.28));
   z-index: 1;
 }
 
@@ -1180,7 +1180,7 @@ body.intro--fullscreen {
   height: 100vh;
   object-fit: cover;
   object-position: center center;
-  filter: saturate(0.88) contrast(0.98) brightness(0.94);
+  filter: saturate(1.0) contrast(1.0) brightness(0.96);
   transform: translateZ(0);
 }
 
@@ -1190,8 +1190,8 @@ body.intro--fullscreen {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(1200px 700px at 50% 40%, rgba(5,5,5,0.10), rgba(5,5,5,0.62)),
-    linear-gradient(rgba(5,5,5,0.30), rgba(5,5,5,0.62));
+    radial-gradient(1200px 700px at 50% 40%, rgba(5,5,5,0.05), rgba(5,5,5,0.38)),
+    linear-gradient(rgba(5,5,5,0.15), rgba(5,5,5,0.40));
 }
 
 /* Centro contenuto */
