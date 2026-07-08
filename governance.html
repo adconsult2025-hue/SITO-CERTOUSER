@@ -58,7 +58,7 @@
     </aside>
 
     <main class="content" id="main">
-      <section class="hero hero--split" data-hero="/IMG/AdobeStock_1477530240.jpeg">
+      <section class="hero hero--split" data-hero="/IMG/AdobeStock_governance_hero.jpeg">
         <div class="hero__media hero__media--cubes" aria-hidden="true"></div>
         <div class="hero__inner">
           <div class="hero__content">
@@ -144,6 +144,7 @@
             <div class="card">
               <h3>Codice Etico</h3>
               <p>Principi e regole di condotta che integrano il Modello 231 e orientano i comportamenti di chi opera nell'ecosistema, a tutela di clienti, partner e istituzioni.</p>
+              <button type="button" class="btn btn--ghost" style="margin-top: 1rem; font-size: .85rem;" data-open-codice-etico>Leggi il documento →</button>
             </div>
             <div class="card">
               <h3>Sistema dei Controlli</h3>
@@ -257,5 +258,82 @@
   </aside>
 
   <script src="/assets/js/site.js"></script>
+  <!-- MODALE PREVIEW CODICE ETICO — solo lettura, nessun link di download -->
+  <div class="ce-modal" id="codiceEticoModal" aria-hidden="true" role="dialog" aria-label="Anteprima Codice Etico">
+    <div class="ce-modal__backdrop" data-close-codice-etico></div>
+    <div class="ce-modal__panel">
+      <div class="ce-modal__header">
+        <span>Codice Etico — CER TO USER S.r.l. · Anteprima</span>
+        <button type="button" class="ce-modal__close" data-close-codice-etico aria-label="Chiudi anteprima">✕</button>
+      </div>
+      <div class="ce-modal__body" id="ceModalBody">
+        <img class="ce-page" src="/IMG/codice-etico/pagina-1.png" alt="Codice Etico, pagina 1" draggable="false" oncontextmenu="return false;">
+        <img class="ce-page" src="/IMG/codice-etico/pagina-2.png" alt="Codice Etico, pagina 2" draggable="false" oncontextmenu="return false;">
+        <img class="ce-page" src="/IMG/codice-etico/pagina-3.png" alt="Codice Etico, pagina 3" draggable="false" oncontextmenu="return false;">
+        <img class="ce-page" src="/IMG/codice-etico/pagina-4.png" alt="Codice Etico, pagina 4" draggable="false" oncontextmenu="return false;">
+        <img class="ce-page" src="/IMG/codice-etico/pagina-5.png" alt="Codice Etico, pagina 5" draggable="false" oncontextmenu="return false;">
+        <img class="ce-page" src="/IMG/codice-etico/pagina-6.png" alt="Codice Etico, pagina 6" draggable="false" oncontextmenu="return false;">
+      </div>
+      <div class="ce-modal__footer">Documento riservato · sola consultazione</div>
+    </div>
+  </div>
+
+  <style>
+    .ce-modal { position: fixed; inset: 0; z-index: 9999; display: none; }
+    .ce-modal[data-open] { display: block; }
+    .ce-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.82); backdrop-filter: blur(3px); }
+    .ce-modal__panel {
+      position: relative; max-width: 780px; width: 92%; margin: 3vh auto; height: 94vh;
+      background: var(--bg, #0d0f11); border: 1px solid var(--stroke, rgba(255,255,255,.1));
+      border-radius: 12px; display: flex; flex-direction: column; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    .ce-modal__header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 1.1rem; border-bottom: 1px solid var(--stroke, rgba(255,255,255,.08));
+      font-size: .85rem; color: var(--muted, #999); flex-shrink: 0;
+    }
+    .ce-modal__close {
+      background: transparent; border: none; color: var(--muted, #999); font-size: 1rem;
+      cursor: pointer; padding: .3rem .6rem; line-height: 1;
+    }
+    .ce-modal__close:hover { color: var(--fg, #fff); }
+    .ce-modal__body {
+      flex: 1; overflow-y: auto; overflow-x: hidden; padding: 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      -webkit-user-select: none; user-select: none;
+    }
+    .ce-page { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 18px rgba(0,0,0,.35); pointer-events: none; }
+    .ce-modal__footer {
+      flex-shrink: 0; text-align: center; padding: .6rem; font-size: .75rem;
+      color: var(--muted, #888); border-top: 1px solid var(--stroke, rgba(255,255,255,.08));
+    }
+    body.ce-modal-open { overflow: hidden; }
+  </style>
+
+  <script>
+    (function() {
+      var modal = document.getElementById('codiceEticoModal');
+      var openBtns = document.querySelectorAll('[data-open-codice-etico]');
+      var closeBtns = document.querySelectorAll('[data-close-codice-etico]');
+
+      function openModal() {
+        modal.setAttribute('data-open', '');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('ce-modal-open');
+      }
+      function closeModal() {
+        modal.removeAttribute('data-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('ce-modal-open');
+      }
+
+      openBtns.forEach(function(btn) { btn.addEventListener('click', openModal); });
+      closeBtns.forEach(function(btn) { btn.addEventListener('click', closeModal); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>
