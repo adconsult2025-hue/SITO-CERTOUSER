@@ -330,6 +330,11 @@ footer {
   flex-direction: column;
   gap: 6px;
   margin-top: 6px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(95,207,128,0.25) transparent;
 }
 
 .sidebar__nav a {
