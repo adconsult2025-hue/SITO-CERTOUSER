@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="googlec592106e1b3fb286">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace PPA On-Site — Il tuo tetto può alimentare direttamente la tua casa | CERtoUSER</title>
+  <meta name="description" content="Il Marketplace PPA On-Site di CERtoUSER dedicato ai proprietari di tetti e immobili. Un Produttore qualificato realizza e gestisce un impianto fotovoltaico sul tuo immobile.">
+  <meta name="keywords" content="marketplace PPA on-site, proponi tetto, fotovoltaico sul tetto, energia diretta casa, PPA on-site CERtoUSER">
+  <link rel="canonical" href="https://www.certouser.it/marketplace">
+  <meta property="og:title" content="Marketplace PPA On-Site | CERtoUSER">
+  <meta property="og:description" content="Il tuo tetto può alimentare direttamente la tua casa. Marketplace PPA On-Site di CERtoUSER.">
+  <meta property="og:url" content="https://www.certouser.it/marketplace">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.certouser.it/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <style>
+    .mk-hero{padding:3rem 0 2.5rem;border-bottom:1px solid var(--stroke,rgba(255,255,255,.08))}
+    .mk-hero .eyebrow{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green,#00c2a8);margin:0 0 .75rem}
+    .mk-hero h1{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;margin:0 0 1rem;line-height:1.2}
+    .mk-hero .lead{font-size:1.05rem;color:var(--muted,#888);max-width:640px;margin:0 0 2rem;line-height:1.75}
+    .mk-hero .lead strong{color:var(--text,#f4f2ec)}
+    .mk-section{padding:2.5rem 0}
+    .mk-section h2{font-size:clamp(1.2rem,2.5vw,1.6rem);margin:0 0 1.5rem}
+    .mk-inner{max-width:900px;margin:0 auto;padding:0 1.5rem}
+    .alt-bg{background:var(--panel,rgba(255,255,255,.02))}
+    .bc{font-size:.8rem;color:var(--muted,#888);margin-bottom:1rem}
+    .bc a{color:var(--green,#00c2a8);text-decoration:none}
+
+    .trust-strip{padding:1.5rem 0;border-bottom:1px solid var(--stroke,rgba(255,255,255,.08))}
+    .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+    .trust-item{display:flex;flex-direction:column;gap:.25rem}
+    .trust-item strong{font-size:.9rem;color:var(--text,#f4f2ec)}
+    .trust-item span{font-size:.82rem;color:var(--muted,#888)}
+
+    .cards-four{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2rem}
+    .mk-card{background:var(--panel,rgba(255,255,255,.04));border:1px solid var(--stroke,rgba(255,255,255,.08));border-radius:8px;padding:1.5rem}
+    .mk-card h3{font-size:.95rem;margin:0 0 .5rem;color:var(--text,#f4f2ec)}
+    .mk-card p{font-size:.875rem;color:var(--muted,#888);margin:0;line-height:1.7}
+    .mk-card .icon-box{width:44px;height:44px;border-radius:10px;background:rgba(95,207,128,.08);border:1px solid rgba(95,207,128,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .mk-card .icon-box svg{width:24px;height:24px;stroke:var(--green,#00c2a8);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .mk-card .icon-box.gold{background:rgba(200,164,93,.08);border-color:rgba(200,164,93,.2)}
+    .mk-card .icon-box.gold svg{stroke:var(--gold,#c8a45d)}
+
+    .energy-panel{background:var(--panel,rgba(255,255,255,.04));border:1px solid var(--stroke,rgba(255,255,255,.08));border-radius:var(--radius,14px);padding:2rem;margin-top:2rem}
+    .energy-topline{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+    .flow-node{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;flex:1;min-width:140px}
+    .flow-node .round-icon{width:56px;height:56px;border-radius:50%;background:rgba(95,207,128,.06);border:1px solid rgba(95,207,128,.2);display:flex;align-items:center;justify-content:center}
+    .flow-node .round-icon svg{width:28px;height:28px;stroke:var(--green,#00c2a8);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .flow-node strong{font-size:.9rem;color:var(--text,#f4f2ec)}
+    .flow-node span{font-size:.8rem;color:var(--muted,#888)}
+    .flow-arrow{font-size:1.5rem;color:var(--gold,#c8a45d);align-self:center;padding-top:1rem}
+    .energy-branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .energy-branch{background:rgba(255,255,255,.02);border:1px solid var(--stroke,rgba(255,255,255,.06));border-radius:10px;padding:1.25rem}
+    .energy-branch small{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted,#888)}
+    .energy-branch strong{display:block;font-size:.95rem;color:var(--text,#f4f2ec);margin:.25rem 0 .5rem}
+    .energy-branch p{font-size:.82rem;color:var(--muted,#888);margin:0;line-height:1.6}
+    .energy-note{margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(200,164,93,.04);border:1px solid rgba(200,164,93,.12);border-radius:8px;font-size:.82rem;color:var(--muted,#888);line-height:1.6}
+    .energy-note b{color:var(--gold,#c8a45d)}
+
+    .legal-panel{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+    @media(max-width:768px){.legal-panel{grid-template-columns:1fr}}
+    .legal-panel h2{margin:0 0 1rem}
+    .legal-facts{display:grid;gap:1rem}
+    .legal-fact{background:var(--panel,rgba(255,255,255,.04));border:1px solid var(--stroke,rgba(255,255,255,.08));border-radius:8px;padding:1.25rem}
+    .legal-fact strong{display:block;font-size:.9rem;color:var(--text,#f4f2ec);margin-bottom:.25rem}
+    .legal-fact span{font-size:.82rem;color:var(--muted,#888)}
+
+    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:2rem}
+    .step{background:var(--panel,rgba(255,255,255,.04));border:1px solid var(--stroke,rgba(255,255,255,.08));border-radius:8px;padding:1.25rem}
+    .step-index{width:32px;height:32px;border-radius:50%;background:rgba(95,207,128,.1);border:1px solid rgba(95,207,128,.3);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green,#00c2a8);font-size:.9rem;margin-bottom:.75rem}
+    .step h3{font-size:.88rem;margin:0 0 .4rem;color:var(--text,#f4f2ec)}
+    .step p{font-size:.8rem;color:var(--muted,#888);margin:0;line-height:1.6}
+
+    .center-head{text-align:center;max-width:640px;margin:0 auto 1rem}
+    .center-head h2{margin:.5rem 0 .75rem}
+    .center-head p{font-size:.95rem;color:var(--muted,#888);line-height:1.7}
+
+    .section-head{display:flex;gap:1.5rem;align-items:start;margin-bottom:1.5rem;flex-wrap:wrap}
+    .section-head > div{flex:1;min-width:200px}
+    .section-head h2{margin:0 0 .5rem}
+    .section-head > p{flex:1;min-width:200px;font-size:.9rem;color:var(--muted,#888);line-height:1.7;padding-top:.25rem}
+
+    .mk-cta{padding:2.5rem 0}
+    .mk-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;max-width:900px;margin:0 auto;padding:0 1.5rem}
+    .mk-cta-inner h2{font-size:1.3rem;margin:0 0 .5rem}
+    .mk-cta-inner p{font-size:.9rem;color:var(--muted,#888);margin:0}
+    .cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
+  </style>
+</head>
+<body class="page-home">
+  <div class="layout">
+    <aside class="sidebar" aria-label="Navigazione principale">
+      <div class="sidebar__brand">
+        <a href="/index.html" class="brand">
+          <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" decoding="async" />
+          <span class="brand-name">CERtoUSER</span>
+        </a>
+        <button class="sidebar__toggle" type="button" data-sidebar-toggle aria-controls="sidebarDrawer" aria-expanded="false" aria-label="Apri menu">
+          Menu
+        </button>
+      </div>
+      <nav class="sidebar__nav" aria-label="Menu">
+        <a href="/home.html">Home</a>
+        <a href="/chi-siamo.html">Chi siamo</a>
+        <a href="/governance.html">Governance</a>
+        <a href="/piattaforma.html">Piattaforma</a>
+        <a href="/ambiti.html">Ambiti</a>
+        <a href="/metodo.html">Metodo</a>
+        <a href="/partner.html">Partner</a>
+        <a href="/comunita-energetiche.html">Comunità Energetiche</a>
+        <a href="/rete-installatori.html">Rete Installatori</a>
+        <a href="/ppa-onsite.html">PPA On-Site</a>
+        <a href="/bess.html">BESS</a>
+        <a class="active" href="/marketplace.html">Marketplace</a>
+        <a href="/risorse.html">Risorse</a>
+        <a href="/contatti.html">Contatti</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a class="btn btn--primary" href="https://certouser.eu">Accesso riservato</a>
+      </div>
+    </aside>
+
+    <main class="content" id="main">
+      <section class="mk-hero">
+        <div class="mk-inner">
+          <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a> › Marketplace</nav>
+          <p class="eyebrow">Marketplace PPA On-Site</p>
+          <h1>Il tuo tetto può alimentare direttamente la tua casa.</h1>
+          <p class="lead">Con <strong>CERtoUSER</strong>, un Produttore qualificato realizza e gestisce un impianto fotovoltaico sul tuo immobile. L'energia prodotta viene fornita <strong>direttamente alla tua utenza</strong> e utilizzata all'interno della casa o dell'attività.</p>
+          <div class="cta-bar" style="display:flex;gap:1rem;flex-wrap:wrap">
+            <a class="btn" href="https://app.certouser.eu/PPAPropostaTetto" target="_blank" rel="noopener">Proponi il tuo tetto →</a>
+            <a class="btn secondary" href="/marketplace-ppa-onsite.html">Scopri il PPA On-Site</a>
+          </div>
+          <div class="trust-strip" style="margin-top:2rem;border:none;padding:0">
+            <div class="trust-grid">
+              <div class="trust-item"><strong>La proprietà resta tua</strong><span>Produttori qualificati</span></div>
+              <div class="trust-item"><strong>Processo gestito</strong><span>Su piattaforma CERtoUSER</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-section" style="padding-top:1.5rem;border-bottom:1px solid var(--stroke,rgba(255,255,255,.08))">
+        <div class="mk-inner">
+          <div class="trust-grid">
+            <div class="trust-item"><strong>PPA On-Site</strong><span>L'impianto è collegato direttamente all'utenza dell'immobile.</span></div>
+            <div class="trust-item"><strong>1.300 kWh omaggio</strong><span>Fino a 1.300 kWh annui, con massimo 200 kWh per mese.</span></div>
+            <div class="trust-item"><strong>Durata di lungo periodo</strong><span>Il diritto d'uso del tetto segue la durata del PPA, normalmente almeno 20 anni.</span></div>
+            <div class="trust-item"><strong>Marketplace protetto</strong><span>La proposta viene gestita e condivisa solo con operatori qualificati.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-section alt-bg">
+        <div class="mk-inner">
+          <div class="center-head">
+            <span class="eyebrow" style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green,#00c2a8)">Il concetto essenziale</span>
+            <h2>Che cos'è un PPA On-Site?</h2>
+            <p>Il Produttore è proprietario dell'impianto e si occupa della sua realizzazione e gestione. Il proprietario dell'immobile mette a disposizione il tetto e utilizza direttamente l'energia prodotta sul posto.</p>
+          </div>
+          <div class="cards-four">
+            <article class="mk-card">
+              <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 44h26M24 35v9M8 29h32L35 10H13zM12 20h24M18 10l-2 19M30 10l2 19"/></svg></div>
+              <h3>Il Produttore realizza l'impianto</h3>
+              <p>Progettazione, installazione, gestione e manutenzione restano in capo al Produttore.</p>
+            </article>
+            <article class="mk-card">
+              <div class="icon-box gold"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m28 4-15 23h11l-4 17 15-24H24z"/></svg></div>
+              <h3>L'energia arriva all'utenza</h3>
+              <p>L'impianto è collegato al sistema elettrico dell'immobile e alimenta direttamente i consumi.</p>
+            </article>
+            <article class="mk-card">
+              <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 23 24 8l19 15"/><path d="M10 21v20h28V21"/><path d="M18 41V28h12v13"/></svg></div>
+              <h3>Il tetto resta tuo</h3>
+              <p>Non vendi il tetto e non trasferisci la proprietà dell'immobile o dell'area.</p>
+            </article>
+            <article class="mk-card">
+              <div class="icon-box gold"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 44h26M24 35v9M8 29h32L35 10H13zM12 20h24M18 10l-2 19M30 10l2 19"/></svg></div>
+              <h3>L'eccedenza va in rete</h3>
+              <p>La produzione non utilizzata nell'immobile viene immessa nella rete e valorizzata.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-section" id="energia">
+        <div class="mk-inner">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow" style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green,#00c2a8)">Consumo diretto e contabilizzazione</span>
+              <h2>Come viene gestita l'energia</h2>
+            </div>
+            <p>Un sistema di misura dedicato distingue l'energia utilizzata direttamente nell'immobile, la quota omaggio, gli ulteriori kWh forniti dal PPA e l'energia immessa in rete.</p>
+          </div>
+          <div class="energy-panel">
+            <div class="energy-topline">
+              <div class="flow-node">
+                <div class="round-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 3v6M24 39v6M3 24h6M39 24h6M9 9l4 4M35 35l4 4M39 9l-4 4M13 35l-4 4"/></svg></div>
+                <strong>Impianto sul tetto</strong>
+                <span>Produce energia durante le ore di sole.</span>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node">
+                <div class="round-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="5" width="32" height="38" rx="5"/><path d="M15 13h18v10H15zM15 31h4M24 31h4M33 31h1M24 23v6"/></svg></div>
+                <strong>Misura dedicata</strong>
+                <span>Rileva produzione e consumo diretto.</span>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node">
+                <div class="round-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 23 24 8l19 15"/><path d="M10 21v20h28V21"/><path d="M18 41V28h12v13"/></svg></div>
+                <strong>Utenza dell'immobile</strong>
+                <span>Utilizza subito l'energia disponibile.</span>
+              </div>
+            </div>
+            <div class="energy-branches">
+              <div class="energy-branch">
+                <small>Priorità 1</small>
+                <strong>Consumo diretto</strong>
+                <p>L'energia prodotta viene utilizzata prima di tutto all'interno dell'immobile, nel momento in cui viene prodotta.</p>
+              </div>
+              <div class="energy-branch">
+                <small>Contabilizzazione PPA</small>
+                <strong>Omaggio + altri kWh</strong>
+                <p>Prima si applica la quota omaggio disponibile; gli ulteriori kWh prodotti e consumati vengono forniti secondo il PPA On-Site.</p>
+              </div>
+              <div class="energy-branch">
+                <small>Solo l'eccedenza</small>
+                <strong>Immissione in rete</strong>
+                <p>Se la produzione supera il consumo dell'utenza, l'energia in più viene immessa nella rete e valorizzata.</p>
+              </div>
+            </div>
+            <div class="energy-note"><b>Quota omaggio:</b> fino a 1.300 kWh per anno, entro il limite massimo di 200 kWh in ciascun mese e nei limiti dell'energia effettivamente prodotta e consumata direttamente.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-section alt-bg">
+        <div class="mk-inner">
+          <div class="legal-panel">
+            <div>
+              <span class="eyebrow" style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold,#c8a45d)">Tutela del progetto</span>
+              <h2>Perché serve un atto notarile?</h2>
+              <p style="font-size:.9rem;color:var(--muted,#888);line-height:1.75;margin:0 0 1rem">Nel programma CERtoUSER, quando il progetto viene accettato, il diritto di utilizzare il tetto o l'area di installazione viene formalizzato per una durata pari a quella del PPA, normalmente non inferiore a 20 anni.</p>
+              <a class="btn" href="/marketplace-ppa-onsite.html#atto-notarile">Approfondisci →</a>
+            </div>
+            <div class="legal-facts">
+              <div class="legal-fact"><strong>La proprietà resta tua</strong><span>L'atto non trasferisce la proprietà dell'immobile.</span></div>
+              <div class="legal-fact"><strong>Diritto d'uso limitato</strong><span>Il Produttore ottiene solo i diritti necessari a installare, gestire e mantenere l'impianto.</span></div>
+              <div class="legal-fact"><strong>Durata coerente</strong><span>Il diritto d'uso copre l'intera durata contrattuale della fornitura.</span></div>
+              <div class="legal-fact"><strong>Regole definite</strong><span>Accessi, manutenzione e responsabilità sono indicati nei contratti e nell'atto.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-section" id="come-funziona">
+        <div class="mk-inner">
+          <div class="center-head">
+            <span class="eyebrow" style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green,#00c2a8)">Dalla candidatura all'impianto</span>
+            <h2>Un percorso progressivo e verificato</h2>
+            <p>Una candidatura preliminare non viene presentata come progetto già pronto: ogni passaggio ha una verifica e un esito chiaro.</p>
+          </div>
+          <div class="timeline">
+            <div class="step"><div class="step-index">1</div><h3>Proponi il tetto</h3><p>Inserisci dati, documenti e fotografie dell'immobile.</p></div>
+            <div class="step"><div class="step-index">2</div><h3>Controllo preliminare</h3><p>Verifichiamo completezza e compatibilità iniziale.</p></div>
+            <div class="step"><div class="step-index">3</div><h3>Verifica tecnica</h3><p>Predimensionamento, documenti e requisiti amministrativi.</p></div>
+            <div class="step"><div class="step-index">4</div><h3>Abbinamento</h3><p>La proposta protetta viene presentata a Produttori qualificati.</p></div>
+            <div class="step"><div class="step-index">5</div><h3>Contratti</h3><p>Sopralluogo, PPA, atto notarile e realizzazione.</p></div>
+            <div class="step"><div class="step-index">6</div><h3>Realizzazione</h3><p>Installazione, collaudo e attivazione dell'impianto.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-section alt-bg">
+        <div class="mk-inner">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow" style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green,#00c2a8)">Collegamenti dedicati</span>
+              <h2>Accessi al Marketplace</h2>
+            </div>
+            <p>Ogni ruolo ha il proprio accesso dedicato alla piattaforma. I link rimandano al frontend operativo di CERtoUSER.</p>
+          </div>
+          <div class="cards-four" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+            <a href="https://app.certouser.eu/PPAPropostaTetto" target="_blank" rel="noopener" class="mk-card" style="text-decoration:none;display:block">
+              <h3 style="color:var(--green,#00c2a8)">Proponi il tuo tetto →</h3>
+              <p>Apre il modulo pubblico per inserire dati, fotografie e documenti iniziali.</p>
+            </a>
+            <a href="/marketplace-accessi.html" class="mk-card" style="text-decoration:none;display:block">
+              <h3 style="color:var(--green,#00c2a8)">Le mie proposte →</h3>
+              <p>Consente al proprietario di riprendere una candidatura e seguirne lo stato.</p>
+            </a>
+            <a href="/marketplace-accessi.html" class="mk-card" style="text-decoration:none;display:block">
+              <h3 style="color:var(--green,#00c2a8)">Area Produttori →</h3>
+              <p>Accesso alle opportunità autorizzate, agli impegni e ai flussi PPA.</p>
+            </a>
+            <a href="/marketplace-accessi.html" class="mk-card" style="text-decoration:none;display:block">
+              <h3 style="color:var(--green,#00c2a8)">Area Installatori →</h3>
+              <p>Gestione sopralluoghi, verifiche, preventivi e avanzamento tecnico.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mk-cta" style="border-top:1px solid var(--stroke,rgba(255,255,255,.08))">
+        <div class="mk-cta-inner">
+          <div>
+            <h2>Hai un tetto disponibile?</h2>
+            <p>Il primo controllo serve a capire se la candidatura può entrare nel percorso.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn" href="https://app.certouser.eu/PPAPropostaTetto" target="_blank" rel="noopener">Proponi il tuo tetto →</a>
+            <a class="btn secondary" href="/marketplace-programma.html">Scopri il programma</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile drawer -->
+  <aside class="drawer" id="sidebarDrawer" aria-hidden="true">
+    <div class="drawer__top">
+      <div class="drawer__brand">
+        <img class="brand-logo" src="/IMG/logo%20cer%20to%20user%20%282%29.png" alt="CERtoUSER" decoding="async" />
+        <span class="brand-name">CERtoUSER</span>
+      </div>
+      <button class="btn btn--ghost" type="button" data-sidebar-close aria-label="Chiudi menu">✕</button>
+    </div>
+    <nav class="drawer__nav" aria-label="Menu mobile">
+      <a href="/home.html">Home</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/governance.html">Governance</a>
+      <a href="/piattaforma.html">Piattaforma</a>
+      <a href="/ambiti.html">Ambiti</a>
+      <a href="/metodo.html">Metodo</a>
+      <a href="/partner.html">Partner</a>
+      <a href="/comunita-energetiche.html">Comunità Energetiche</a>
+      <a href="/rete-installatori.html">Rete Installatori</a>
+      <a href="/ppa-onsite.html">PPA On-Site</a>
+      <a href="/bess.html">BESS</a>
+      <a class="active" href="/marketplace.html">Marketplace</a>
+      <a href="/risorse.html">Risorse</a>
+      <a href="/contatti.html">Contatti</a>
+    </nav>
+    <div class="drawer__cta">
+      <a class="btn btn--primary" href="https://certouser.eu">Accesso riservato</a>
+    </div>
+  </aside>
+
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>
